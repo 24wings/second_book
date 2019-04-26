@@ -86,7 +86,7 @@ namespace Wings
             //var connection = @"Server=localhost;Initial Catalog=master;Integrated Security=True";
             // var rcxhConnect = "Data Source=127.0.0.1;Database=hk;User Id=root;Password=lwm740130;Convert Zero Datetime=True;Allow User Variables=True;";
             // var rcxhConnect = "Data Source=127.0.0.1;Database=hk;User Id=root;Password=lwm740130;Convert Zero Datetime=True;Allow User Variables=True;";
-            var rcxhConnect = "Data Source=127.0.0.1;Database=second_book;User Id=root;Password=root;";
+            var rcxhConnect = "Data Source=115.29.64.6;Database=second_book;User Id=admin;Password=MyNewPass4!;";
             services
                 // .AddDbContext<WingsContext> (option => option.UseMySql (connection))
                 .AddDbContext<RcxhContext>(option => option.UseMySql(rcxhConnect));
