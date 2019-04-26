@@ -1,0 +1,2154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wings</name>
+    </assembly>
+    <members>
+        <member name="T:Wings.Base.Common.Attrivute.ColAttribute">
+            <summary>
+            列特性
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ColAttribute.caption">
+            <summary>
+            标签
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ColAttribute.dataType">
+            <summary>
+            数据类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ColAttribute.dataField">
+            <summary>
+            属性
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ColAttribute.calculateDisplayValue">
+            <summary>
+            计算显示值
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.ColDataType">
+            <summary>
+            列的数据类型
+            </summary>
+            
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.ColDataType.String">
+            <summary>
+            列的数据类型
+            </summary>
+            
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.ColDataType.Number">
+            <summary>
+            列的数据类型
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.ColDataType.date">
+            <summary>
+            日期类型
+            </summary>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.DataSourceAttribute">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DataSourceAttribute.key">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DataSourceAttribute.url">
+            <summary>
+            默认增删改查地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DataSourceAttribute.loadUrl">
+            <summary>
+            查询地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DataSourceAttribute.insertUrl">
+            <summary>
+            插入地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DataSourceAttribute.deleteUrl">
+            <summary>
+            移除地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DataSourceAttribute.updateUrl">
+            <summary>
+            更新地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.EditorOptionsAttribute">
+            <summary>
+            编辑器
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.EditorOptionsAttribute.dxTreeView">
+            <summary>
+            树形视图
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.EditorOptionsAttribute.dxDropbox">
+            <summary>
+            下拉菜单
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.ItemAttribute">
+            <summary>
+            表单特性
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ItemAttribute.label">
+            <summary>
+            标签
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ItemAttribute.editorType">
+            <summary>
+            编辑类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ItemAttribute.dataField">
+            <summary>
+            数据字段
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ItemAttribute.editorOptions">
+            <summary>
+            表单附加选项
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.EditorType">
+            <summary>
+            表单控件类型
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxAutocomplete">
+            <summary>
+            自动补全
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxCalendar">
+            <summary>
+             日历
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxCheckBox">
+            <summary>
+            勾选
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxColorBox">
+            <summary>
+            颜色选择器
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxDateBox">
+            <summary>
+            日期选择器
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxDropDownBox">
+            <summary>
+            下拉
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxLookup">
+            <summary>
+            数据查询
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxNumberBox">
+            <summary>
+             数字框
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxRadioGroup">
+            <summary>
+             单选组
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxRangeSlider">
+            <summary>
+             区间
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxSelectBox">
+            <summary>
+             选择box
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxSlider">
+            <summary>
+             区间
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxSwitch">
+            <summary>
+             开关
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxTagBox">
+            <summary>
+             标签
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxTextArea">
+            <summary>
+             文本域
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.dxTextBox">
+            <summary>
+             文本框
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.EditorType.wsRefTree">
+            <summary>
+             引用树
+            </summary>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.TreeListViewAttribute">
+            <summary>
+            视图特性
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.TreeListViewAttribute.viewType">
+            <summary>
+            覆盖视图类型 
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.TreeListViewAttribute.keyExpr">
+            <summary>
+            主键表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.TreeListViewAttribute.parentIdExpr">
+            <summary>
+            上级id表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.ViewAttribute">
+            <summary>
+            视图特性
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ViewAttribute.viewType">
+            <summary>
+            视图类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ViewAttribute.title">
+            <summary>
+            标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.ViewAttribute.entity">
+            <summary>
+            指向更新实体
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.ViewType">
+            <summary>
+            视图类型
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.ViewType.Table">
+            <summary>
+            表格
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Attrivute.ViewType.Tree">
+            <summary>
+            树形
+            </summary>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.DxDropboxAttribute">
+            <summary>
+            下拉菜单
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DxDropboxAttribute.displayExpr">
+            <summary>
+            取值表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Attrivute.DxTreeViewAttribute">
+            <summary>
+            树形视图
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DxTreeViewAttribute.displayExpr">
+            <summary>
+            下拉显示数据
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DxTreeViewAttribute.selectionMode">
+            <summary>
+             "multiple" |"single"
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DxTreeViewAttribute.keyExpr">
+            <summary>
+            主键表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DxTreeViewAttribute.parentIdExpr">
+            <summary>
+            父级Id表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Attrivute.DxTreeViewAttribute.placeholder">
+            <summary>
+            下拉勾选
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.UploadOutput">
+            <summary>
+            上传响应
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.UploadOutput.filename">
+            <summary>
+            文件名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.UploadOutput.url">
+            <summary>
+            文件地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.UploadController">
+            <summary>
+            流式上传
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.UploadController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.UploadController.upload(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            流式上传
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Entity.TokenInstance">
+            <summary>
+            token信息
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Entity.TokenInstance.mechineId">
+            <summary>
+            设备id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Entity.TokenInstance.LoginPassword">
+            <summary>
+            登陆密码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Entity.TokenInstance.phone">
+            <summary>
+            登录的手机号
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Entity.AppTokenOutput">
+            <summary>
+            token实体
+            前端使用token可以获得token实体信息
+            </summary>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.CommonRtn">
+            <summary>
+            通用响应体
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.CommonRtn.message">
+            <summary>
+            消息
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.CommonRtn.success">
+            <summary>
+            是否成功
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.CommonRtn.resData">
+            <summary>
+            返回给前端的数据
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.CommonRtn.code">
+            <summary>
+             状态码
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Base.Common.DTO.CommonRtn.Error(System.String)">
+            <summary>
+            便捷方法返回错误消息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.DTO.CommonRtn.Success(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            便捷方法返回正确消息
+            </summary>
+            <param name="resData"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.DTO.CommonRtn.Success(System.String,System.Object,System.String)">
+            <summary>
+            返回正确消息
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.DataSource">
+            <summary>
+               数据源
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.type">
+            <summary>
+            数据存取方式, local,odata,custom
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.key">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.url">
+            <summary>
+            默认增删改查地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.loadUrl">
+            <summary>
+            查询地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.insertUrl">
+            <summary>
+            插入地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.deleteUrl">
+            <summary>
+            移除地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DataSource.updateUrl">
+            <summary>
+            更新地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.DevExtreamQuery">
+            <summary>
+            DevExtream Body Datas
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DevExtreamQuery.values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DevExtreamQuery.key">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.DevExtremInput">
+            <summary>
+            DevExtream Body Datas
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DevExtremInput.values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DevExtremInput.key">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.Rtn`1">
+            <summary>
+            返回给前端的数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Rtn`1.message">
+            <summary>
+            消息
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Rtn`1.success">
+            <summary>
+            是否成功
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Rtn`1.resData">
+            <summary>
+            返回给前端的数据
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Rtn`1.code">
+            <summary>
+             状态码
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Base.Common.DTO.Rtn`1.Error(System.String)">
+            <summary>
+            便捷方法返回错误消息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.DTO.Rtn`1.Success(`0,System.String)">
+            <summary>
+            便捷方法返回正确消息
+            </summary>
+            <param name="data"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.UploadFileInput">
+            <summary>
+            文件上传
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.UploadFileInput.base64">
+            <summary>
+            base64格式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.UploadFileInput.ext">
+            <summary>
+            文件扩展名
+            默认 png
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.UploadFileInput.fileName">
+            <summary>
+            文件名字,默认为上传文件
+            如上传文件为png,则为 上传文件.png
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.UploadImageInput">
+            <summary>
+            图片上传
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.UploadImageInput.base64">
+            <summary>
+            base64格式
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.Col">
+            <summary>
+            列
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Col.caption">
+            <summary>
+            标签
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Col.dataField">
+            <summary>
+            属性
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Col.dataType">
+            <summary>
+            列的数据类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Col.calculateDisplayValue">
+            <summary>
+            显示值
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.Item">
+            <summary>
+            表单元数据
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Item.label">
+            <summary>
+            标签
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Item.editorType">
+            <summary>
+            编辑类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Item.dataField">
+            <summary>
+            数据字段
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Item.editorOptions">
+            <summary>
+            编辑器选项
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.View">
+            <summary>
+            视图元数据
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.dvo">
+            <summary>
+            数据视图对象名称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.fullName">
+            <summary>
+            完全限定名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.viewType">
+            <summary>
+            视图类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.title">
+            <summary>
+            页面标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.cols">
+            <summary>
+            列
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.items">
+            <summary>
+            表单字段
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.keyExpr">
+            <summary>
+            主键表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.parentIdExpr">
+            <summary>
+            上级id表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.View.dataSource">
+            <summary>
+            数据源
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.Label">
+            <summary>
+            标签文本
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.Label.text">
+            <summary>
+            标签文本
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.EditorOptions">
+            <summary>
+              editorOptions: {
+                dxDropbox: {
+                  displayExpr: "name"
+                },
+                dxTreeView: {
+                  dataSource: new DataSource(
+                    new LocalStore({
+                      key: "id",
+                      immediate: true,
+                      name: "local-menu",
+                      flushInterval: 1000
+                    })
+                  ),
+                  selectionMode: "multiple",
+                  keyExpr: "id",
+                  displayExpr: "name",
+                  parentIdExpr: "parentId",
+                  placeholder: "勾选菜单列表"
+                }
+              }
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.EditorOptions.dxDropbox">
+            <summary>
+            配置下拉菜单
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.EditorOptions.dxTreeView">
+            <summary>
+            树形视图
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.DxDropbox">
+            <summary>
+            下拉菜单
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxDropbox.displayExpr">
+            <summary>
+            取值表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.DxTreeView">
+            <summary>
+            树形视图
+            </summary>
+        </member>
+        <member name="T:Wings.Base.Common.DTO.DxTreeView.SelectionMode">
+            <summary>
+            菜单选择模式
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.SelectionMode.multiple">
+            <summary>
+            多选
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.SelectionMode.single">
+            <summary>
+            单选
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.dataSource">
+            <summary>
+            数据源
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.selectionMode">
+            <summary>
+            选择模式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.keyExpr">
+            <summary>
+            主键表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.displayExpr">
+            <summary>
+            显示表达式
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.parentIdExpr">
+            <summary>
+            上级Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.DTO.DxTreeView.placeholder">
+            <summary>
+            悬浮提示
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Services.CharUtil">
+            <summary>
+            字符工具
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.CharUtil.GetPYString(System.String)">
+            <summary>
+            获取拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.CharUtil.GetPYChar(System.String)">
+            <summary>
+            取单个字符的拼音声母     
+                 
+            要转换的单个汉字     
+            拼音声母     
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.ICommonService">
+            <summary>
+            用户业务接口
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.ICommonService.getRequestIp">
+            <summary>
+            获取请求ip
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.ICommonService.getAuthenticationHeader">
+            <summary>
+            获取认证请求头
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.CommonService">
+            <summary>
+            用户业务具体实现
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.CommonService.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            通用业务
+            </summary>
+            <param name="_accessor"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.CommonService.getRequestIp">
+            <summary>
+            获取请求ip
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.CommonService.getAuthenticationHeader">
+            <summary>
+            获取认证请求头
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.DESEncrypt">
+            <summary>
+            加密和解密
+            </summary>
+        </member>
+        <member name="F:Wings.Base.Common.Services.DESEncrypt.KEY">
+            <summary>
+            加密解密的key
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.DESEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="text"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.DESEncrypt.DecryptString(System.String,System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="cipherText"></param>
+            <param name="keyString"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.IDVOService">
+            <summary>
+            DVO服务
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.IDVOService.listViewByNamespace(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="_namespace_"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.DVOService">
+            <summary>
+            根据命名空间列出视图列表
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.DVOService.listViewByNamespace(System.String)">
+            <summary>
+            根据命名空间列出旗下的所有dvo
+            </summary>
+            <param name="_namespace_"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.DVOService.getViewByName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dvo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.OSSService">
+            <summary>
+            Sample for putting object.
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Services.OSSService.bucketName">
+            <summary>
+            默认存储
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.uploadFile(System.IO.Stream,System.String,System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="bucketName"></param>
+            <param name="key"></param>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObject(System.String)">
+            <summary>
+            sample for put object to oss
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectFromFile(System.String)">
+            <summary>
+            文件上传
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectFromFileWithTimeout(System.String)">
+            <summary>
+            限时文件上传
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.GetMd5Hash(System.String)">
+            <summary>
+            md5hash
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectFromStringWithHashPrefix(System.String)">
+            <summary>
+            上传文件以md5前缀
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.listFiles">
+            <summary>
+            列出文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectFromString(System.String)">
+            <summary>
+            字符串上传文件
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectWithDir(System.String)">
+            <summary>
+            文件夹上传
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectWithMd5(System.String)">
+            <summary>
+            md5上传
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectWithHeader(System.String)">
+            <summary>
+            文件头上传
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.AsyncPutObject(System.String)">
+            <summary>
+            异步上传
+            </summary>
+            <param name="bucketName"></param>
+        </member>
+        <member name="M:Wings.Base.Common.Services.OSSService.PutObjectCallback(System.IAsyncResult)">
+            <summary>
+            回调上传
+            </summary>
+            <param name="ar"></param>
+        </member>
+        <member name="T:Wings.Base.Common.Services.SendSmsResponseData">
+            <summary>
+            发送短信响应体数据
+            </summary>
+        </member>
+        <member name="P:Wings.Base.Common.Services.SendSmsResponseData.Message">
+            <summary>
+            消息
+            成功为OK
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Services.SendSmsResponseData.RequestId">
+            <summary>
+            请求Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Services.SendSmsResponseData.BizId">
+            <summary>
+            流水号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Base.Common.Services.SendSmsResponseData.Code">
+            <summary>
+            状态吗
+            成功为OK
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Base.Common.Services.ISmsService">
+            <summary>
+            发送短信接口
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.ISmsService.sendSms(System.String,System.String,System.String,System.String)">
+            <summary>
+            发送短信接口
+            </summary>
+            <param name="phoneNumbers"></param>
+            <param name="signName"></param>
+            <param name="templateCode"></param>
+            <param name="templateParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.ISmsService.sendSignupAuthcode(System.String,System.String)">
+            <summary>
+            发送注册验证码
+            </summary>
+            <param name="phone"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.SmsService">
+            <summary>
+            短信服务
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.SmsService.sendSms(System.String,System.String,System.String,System.String)">
+            <summary>
+            发送短信验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.SmsService.sendSignupAuthcode(System.String,System.String)">
+            <summary>
+            发送注册验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Base.Common.Services.TimeStampOperation">
+            <summary>
+            时间戳工具类
+            </summary>
+        </member>
+        <member name="M:Wings.Base.Common.Services.TimeStampOperation.EnTimeStamp(System.DateTime)">
+            <summary>
+                时间==》时间戳
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Base.Common.Services.TimeStampOperation.DeTimeStamp(System.Int64)">
+            <summary>
+            时间戳==》时间
+            </summary>
+            <param name="timeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Program">
+            <summary>
+            程序启动文件
+            </summary>
+        </member>
+        <member name="M:Wings.Program.Main(System.String[])">
+            <summary>
+            程序启动主函数
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Wings.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Video.Controllers.UploadOutput">
+            <summary>
+            上传响应
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Video.Controllers.UploadOutput.filename">
+            <summary>
+            文件名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Video.Controllers.UploadOutput.url">
+            <summary>
+            文件地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Video.Controllers.UploadVideoInput">
+            <summary>
+            视频上传文件
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Video.Controllers.UploadVideoInput.filename">
+            <summary>
+            文件名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Video.Controllers.UploadVideoInput.file">
+            <summary>
+            上传文件,
+            使用FormData上传
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Video.Controllers.VideoController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Video.Controllers.VideoController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Video.Controllers.VideoController.listVideo">
+            <summary>
+            列出所有视频
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Video.Controllers.VideoController.uploadVideo(Wings.Projects.Video.Controllers.UploadVideoInput)">
+            <summary>
+            上传视频
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput">
+            <summary>
+            创建文章
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.title">
+            <summary>
+            标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.html">
+            <summary>
+            html
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.markdown">
+            <summary>
+            markdown
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.author">
+            <summary>
+            作者
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.summary">
+            <summary>
+            简介
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.bannerImageUrl">
+            <summary>
+            首版头像
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.sourceType">
+            <summary>
+            文章来源类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.ArticleController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.ArticleController.userService">
+            <summary>
+            用户业务
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.#ctor(Wings.Projects.Web.RcxhContext,Cucr.CucrSaas.App.Service.IUserService)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+            <param name="_userService"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.load(DevExtreme.AspNet.Mvc.DataSourceLoadOptions)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.insert(Wings.Projects.Web.RBAC.Controllers.CreateArticleInput)">
+            <summary>
+            增加数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.remove(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            移除数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.update(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.MenuController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.MenuController.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.MenuController.load(DevExtreme.AspNet.Mvc.DataSourceLoadOptions)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.MenuController.insert(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            增加数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.MenuController.remove(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            移除数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.MenuController.update(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.OrgController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.OrgController.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.OrgController.load(DevExtreme.AspNet.Mvc.DataSourceLoadOptions)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.OrgController.insert(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            增加数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.OrgController.remove(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            移除数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.OrgController.update(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.RoleController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.RoleController.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.RoleController.load(DevExtreme.AspNet.Mvc.DataSourceLoadOptions)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.RoleController.insert(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            增加数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.RoleController.remove(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            移除数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.RoleController.update(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.UserController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.UserController.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.UserController.load(DevExtreme.AspNet.Mvc.DataSourceLoadOptions)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.UserController.insert(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            增加数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.UserController.remove(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            移除数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.UserController.update(Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.Controllers.CurdController`1">
+            <summary>
+            自动化CRUD
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Controllers.CurdController`1.db">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.CurdController`1.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.CurdController`1.load(DevExtreme.AspNet.Mvc.DataSourceLoadOptions,Microsoft.EntityFrameworkCore.DbSet{`0})">
+            <summary>
+            查询数据
+            </summary>
+            <param name="options"></param>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.CurdController`1.insert(Wings.Base.Common.DTO.DevExtremInput,`0,Microsoft.EntityFrameworkCore.DbSet{`0})">
+            <summary>
+            插入数据
+            </summary>
+            <param name="bodyData"></param>
+            <param name="instance"></param>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.CurdController`1.remove(System.Int32,Microsoft.EntityFrameworkCore.DbSet{`0})">
+            <summary>
+            删除记录
+            </summary>
+            <param name="key"></param>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.CurdController`1.update(Wings.Base.Common.DTO.DevExtremInput,Microsoft.EntityFrameworkCore.DbSet{`0})">
+            <summary>
+            更新记录
+            </summary>
+            <param name="bodyData"></param>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.Controllers.DVOController">
+            <summary>
+            自动化管理控制器
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.load(System.String,DevExtreme.AspNet.Data.DataSourceLoadOptionsBase)">
+            <summary>
+            dvo查询
+            </summary>
+            <param name="dvoFullName"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.getEntityByName(System.String)">
+            <summary>
+            实力方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.insert(System.String,Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            插入数据
+            </summary>
+            <param name="dvoFullName"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.update(System.String,Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="dvoFullName"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.remove(System.String,Wings.Base.Common.DTO.DevExtremInput)">
+            <summary>
+            删除
+            </summary>
+            <param name="dvoFullName"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.listDVO">
+            <summary>
+            列出DVO
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.getViewByDVO(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dvo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.DVOController.getViewByType(System.Type)">
+            <summary>
+            根据类型获取视图
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.Controllers.Config">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Controllers.Config.secret">
+            <summary>
+            密钥
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.Controllers.TokenInstance">
+            <summary>
+            token实例
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Controllers.TokenInstance.userId">
+            <summary>
+            用户id
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.Controllers.LoginInput">
+            <summary>
+            登录输入
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Controllers.LoginInput.username">
+            <summary>
+            用户名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Controllers.LoginInput.password">
+            <summary>
+            密码
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.Controllers.AuthController">
+            <summary>
+            自动化管理控制器
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.AuthController.#ctor(Wings.Projects.Web.RcxhContext)">
+            <summary>
+            
+            </summary>
+            <param name="_db"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.AuthController.login(Wings.Projects.Web.Controllers.LoginInput)">
+            <summary>
+            登录
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.Controllers.AuthController.signup(Wings.Projects.Web.Controllers.LoginInput)">
+            <summary>
+            注册
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Post.Article">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.id">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.title">
+            <summary>
+            标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.userId">
+            <summary>
+            发布人
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.charNum">
+            <summary>
+            文章字符长度
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.createAt">
+            <summary>
+            发布时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.lastModifyAt">
+            <summary>
+            上次修改时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.markdown">
+            <summary>
+            markdown
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.html">
+            <summary>
+            html
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.author">
+            <summary>
+            作者
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.sourceType">
+            <summary>
+            文章来源类型 0原创1转载
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.summary">
+            <summary>
+            简介
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.bannerImageUrl">
+            <summary>
+            首页图片
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Post.SourceType">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="F:Wings.Projects.Web.Entity.Post.SourceType.Create">
+            <summary>
+            原创
+            </summary>
+        </member>
+        <member name="F:Wings.Projects.Web.Entity.Post.SourceType.Reprint">
+            <summary>
+            转载
+            </summary>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Rbac.Menu">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Menu.id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Menu.text">
+            <summary>
+            菜单文本
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Menu.parentId">
+            <summary>
+            上级Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Menu.link">
+            <summary>
+            链接
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Menu.createTime">
+            <summary>
+            创建时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Menu.menuIds">
+            <summary>
+            菜单列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Rbac.Org">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Org.orgId">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Org.orgName">
+            <summary>
+            组织名称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Org.parentId">
+            <summary>
+            上级组织id
+            </summary>
+            <value></value>
+        </member>
+        <member name="F:Wings.Projects.Web.Entity.Rbac.Org.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Rbac.Role">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Role.id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Role.roleName">
+            <summary>
+            昵称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Role.menuIds">
+            <summary>
+            菜单字符串
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Role.createTime">
+            <summary>
+            创建时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.Role.menus">
+            <summary>
+            菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Rbac.User">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.nickname">
+            <summary>
+            昵称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.username">
+            <summary>
+            姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.password">
+            <summary>
+            密码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.orgId">
+            <summary>
+            组织Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.createTime">
+            <summary>
+            创建时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.roleType">
+            <summary>
+            角色类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.org">
+            <summary>
+            用户组织
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.wxUserId">
+            <summary>
+            微信用户Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.wxUser">
+            <summary>
+            微信用户信息
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.token">
+            <summary>
+            token
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.User.headimg">
+            <summary>
+            头像
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Rbac.RoleType">
+            <summary>
+            角色类型
+            </summary>
+        </member>
+        <member name="F:Wings.Projects.Web.Entity.Rbac.RoleType.Guest">
+            <summary>
+            游客
+            </summary>
+        </member>
+        <member name="F:Wings.Projects.Web.Entity.Rbac.RoleType.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:Wings.Projects.Web.Entity.Rbac.RoleType.Admin">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Rbac.WxUser">
+            <summary>
+            微信用户
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.WxUser.id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.WxUser.nickname">
+            <summary>
+            昵称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.WxUser.headimg">
+            <summary>
+            头像
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.WxUser.createAt">
+            <summary>
+            创建时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.WxUser.provice">
+            <summary>
+            省份
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Rbac.WxUser.openid">
+            <summary>
+            openId
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.RcxhContext">
+            <summary>
+            航空数据环境
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.RcxhContext.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Web.RcxhContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Wings.Projects.Web.RcxhContext})">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.users">
+            <summary>
+            用户表
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.roles">
+            <summary>
+            角色管理
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.orgs">
+            <summary>
+            组织
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.menus">
+            <summary>
+            菜单
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.articles">
+            <summary>
+            文章
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Projects.Web.RcxhContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:Wings.Projects.Web.RcxhContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            数据库实体创建时
+            1.null 扫描Wings.Hk 命名空间下的所有表
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:Wings.Startup">
+            <summary>
+            程序启动类
+            </summary>
+        </member>
+        <member name="M:Wings.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            程序启动类的构造函数
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Wings.Startup.Configuration">
+            <summary>
+            程序配置对象
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+             This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Wings.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+             <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+             </summary>
+             <param name="app"></param>
+             <param name="env"></param>
+        </member>
+        <member name="T:Cucr.CucrSaas.App.Service.TokenUserJsonObject">
+            <summary>
+            写入json的user
+            </summary>
+        </member>
+        <member name="P:Cucr.CucrSaas.App.Service.TokenUserJsonObject.user">
+            <summary>
+            用户信息
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Cucr.CucrSaas.App.Service.IUserService">
+            <summary>
+            用户业务接口
+            </summary>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.IUserService.getUserToken(Wings.Projects.Web.Entity.Rbac.User)">
+            <summary>
+            
+            </summary>
+            <param name="appToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.IUserService.decodeToken(System.String)">
+            <summary>
+            根据token解码用户信息
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.IUserService.getUserFromAuthcationHeader">
+            <summary>
+            根据请求头Authcation 获取并且解析出用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cucr.CucrSaas.App.Service.UserService">
+            <summary>
+            用户业务具体实现
+            </summary>
+        </member>
+        <member name="F:Cucr.CucrSaas.App.Service.UserService.secret">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.UserService.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            
+            </summary>
+            <param name="_accessor"></param>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.UserService.getUserToken(Wings.Projects.Web.Entity.Rbac.User)">
+            <summary>
+            获取用户登录的token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.UserService.decodeToken(System.String)">
+            <summary>
+            根据token 解密token数据
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cucr.CucrSaas.App.Service.UserService.getUserFromAuthcationHeader">
+            <summary>
+            根据Header的Authzacation获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
