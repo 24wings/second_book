@@ -24,8 +24,9 @@
     <PackageReference Include="DevExtreme.Web" Version="18.2.5" />
     <PackageReference Include="Dos.ORM" Version="1.16.0" />
     <PackageReference Include="JWT" Version="5.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
@@ -34,6 +35,9 @@
     <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="NSwag.AspNetCore" Version="12.0.18" />
+    <PackageReference Include="Senparc.Weixin" Version="5.3.11" />
+    <PackageReference Include="Senparc.Weixin.MP" Version="14.6.15" />
+    <!-- <PackageReference Include="Senparc.Weixin.Open" Version="4.4.5.2" /> -->
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.0" />
     <PackageReference Include="xunit" Version="2.4.1" />

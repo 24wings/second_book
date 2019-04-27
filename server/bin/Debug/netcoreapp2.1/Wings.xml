@@ -1171,6 +1171,12 @@
             微信配置
             </summary>
         </member>
+        <member name="P:Wings.Projects.Config.WechatConfig.AppId">
+            <summary>
+            AppId
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Wings.Projects.Config.WechatConfig.Url">
             <summary>
             url
@@ -2192,8 +2198,15 @@
         </member>
         <member name="M:Wings.Projects.Wechat.WechatController.auth(System.String,System.Int32,System.String,System.String)">
             <summary>
-            微信授权认证
+            微信接入
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Wechat.WechatController.oauth(System.String)">
+            <summary>
+            微信授权
+            </summary>
+            <param name="returnUrl"></param>
             <returns></returns>
         </member>
         <member name="T:Wings.Startup">
