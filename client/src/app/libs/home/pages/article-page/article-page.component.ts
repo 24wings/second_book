@@ -68,6 +68,7 @@ export class ArticlePageComponent {
         setTimeout(() => {
             this.initPreview();
         }, 1000);
+
         this.initMap()
     }
     initPreview() {
@@ -123,7 +124,7 @@ export class ArticlePageComponent {
             map.add(marker);
             marker.on('click', onMarkerClick);//绑定click事件
 
-        }, 3000);
+        }, 10000);
     }
 
     startComment() {
