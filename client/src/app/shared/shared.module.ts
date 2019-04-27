@@ -38,17 +38,22 @@ import { DynamicColComponent } from "./components/cols/dynamic-col.component";
 import { DynamicCellComponent } from "./components/cells/dynamic-cell.component";
 import { DynamicColDirective } from "./components/cols/dynamic-col.directive";
 import { DynamicCellDirective } from "./components/cells/dynamic-cell.directive";
-import { cellComponentRegister } from "./components/cells/cell.component.register";
 import { WsSearchBarComponent } from "./components/ws-search-bar/ws-search-bar.component";
-var cellComponents = cellComponentRegister.map(r => r.component);
 import { DxValidatorModule } from "devextreme-angular/ui/validator";
 import { DxValidationGroupModule } from "devextreme-angular/ui/validation-group";
 import { MyHttpService } from './services/my-http.service';
 import { RcxhApiService } from './services/rcxh-api.service';
-import { NgxMdModule } from 'ngx-md';
+import { WsRefTreeComponent } from './components/cells/ws-ref-tree/ws-ref-tree.component';
+import { WsImageCellComponent } from './components/cells/ws-image-cell/ws-image-cell.component';
+
+
+let cellComponents = [
+  WsRefTreeComponent,
+  WsImageCellComponent
+
+]
 @NgModule({
   imports: [
-    NgxMdModule,
     CommonModule,
     DxTagBoxModule,
     DxTextAreaModule,
@@ -81,7 +86,6 @@ import { NgxMdModule } from 'ngx-md';
 
   ],
   exports: [
-    NgxMdModule,
     DxTagBoxModule,
     DxDataGridModule,
     DxTreeListModule,
@@ -117,7 +121,7 @@ import { NgxMdModule } from 'ngx-md';
     DxValidationGroupModule,
     DxValidatorModule,
     DxFileUploaderModule,
-    DxLookupModule,
+    DxLookupModule
   ],
   declarations: [
     WsViewComponent,
@@ -131,13 +135,13 @@ import { NgxMdModule } from 'ngx-md';
     WsSearchBarComponent,
   ],
   providers: [SqlMapService, DxTemplateHost, RcxhApiService],
-  entryComponents: [...cellComponents]
+  entryComponents: []
 })
 export class SharedModule {
   public static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [SqlMapService, MyHttpService]
+      providers: [SqlMapService, MyHttpService, RcxhApiService]
     };
   }
 }

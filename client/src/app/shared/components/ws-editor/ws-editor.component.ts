@@ -55,7 +55,7 @@ export class WsEditorComponent {
 
   @Output() onCreateSuccess = new EventEmitter();
   customer = {};
-  async onFormSubmit() {
+  async onFormSubmit($event) {
     console.log(this.dataSource);
     var pid = await this.formData[(this.v as TreeListView).parentIdExpr];
     debugger;

@@ -6,7 +6,8 @@
 
 <div style="text-align:right;margin-bottom:20px;margin-top:20px;display:flex;justify-content: space-between;"
   *ngIf="mode == 'List'">
-  <dx-button text="新建" (onClick)="openNewModal()" [width]="40" style="margin-right:20px"></dx-button>
+  <dx-button text="新建" *ngIf="v.add!=false" (onClick)="openNewModal()" [width]="40" style="margin-right:20px">
+  </dx-button>
   <!-- <dx-button text="编辑" (onClick)="openUpdateModel($event)" [width]="40" style="margin-right:20px" -->
   <!-- [disabled]="selectedRows.length != 1"></dx-button> -->
   <!-- <dx-button text="详情" (onClick)="openNewModal($event)" [width]="40" style="margin-right:20px"></dx-button> -->

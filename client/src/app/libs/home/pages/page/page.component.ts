@@ -103,4 +103,9 @@ export class PageComponent {
         }
     }
 
+    doAction($event) {
+        console.log($event);
+        window.open("/home/article/" + $event.data.id);
+    }
+
 }

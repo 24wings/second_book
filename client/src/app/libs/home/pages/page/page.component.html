@@ -1,1 +1,1 @@
-<ws-view [view]="selectedDVO" *ngIf="selectedDVO"></ws-view>
+<ws-view [view]="selectedDVO" (onAction)="doAction($event)" *ngIf="selectedDVO"></ws-view>

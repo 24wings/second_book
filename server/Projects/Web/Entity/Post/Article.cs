@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Wings.Projects.Web.Entity.Post
-{
+namespace Wings.Projects.Web.Entity.Post {
     /// <summary>
     /// 菜单
     /// </summary>
-    [Table("article")]
-    public class Article
-    {
+    [Table ("article")]
+    public class Article {
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated (DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         /// <summary>
         /// 标题
@@ -74,13 +72,47 @@ namespace Wings.Projects.Web.Entity.Post
         /// </summary>
         /// <value></value>
         public string bannerImageUrl { get; set; }
+        /// <summary>
+        /// 使用阅读量
+        /// </summary>
+        /// <value></value>
+        public bool? useRead { get; set; } = false;
+        /// <summary>
+        /// 定制阅读量
+        /// </summary>
+        /// <value></value>
+        public int? useReadNum { get; set; } = 0;
+        /// <summary>
+        /// 使用正在阅读
+        /// </summary>
+        /// <value></value>
+        public bool? useReading { get; set; } = false;
+        /// <summary>
+        /// 正在阅读数量
+        /// </summary>
+        /// <value></value>
+        public int? useReadingNum { get; set; } = 0;
+        /// <summary>
+        /// 阅读次数
+        /// </summary>
+        /// <value></value>
+        public int? readNum { get; set; } = 0;
+        /// <summary>
+        /// 使用音频
+        /// </summary>
+        /// <value></value>
+        public bool? useAudio { get; set; } = false;
+        /// <summary>
+        /// 音频地址
+        /// </summary>
+        /// <value></value>
+        public string audioUrl { get; set; } = "";
 
     }
     /// <summary>
     /// 来源类型
     /// </summary>
-    public enum SourceType
-    {
+    public enum SourceType {
         /// <summary>
         /// 原创
         /// </summary>

@@ -18,7 +18,7 @@ export class UserPanelComponent {
   @Input()
   menuMode: string;
 
-  constructor(private appInfo: AppInfoService) {
+  constructor(public appInfo: AppInfoService) {
     if (this.appInfo.userInfo.headimg) {
       setTimeout(() => {
         document.getElementById("userImage").style.backgroundImage = `url("${this.appInfo.userInfo.headimg}")`

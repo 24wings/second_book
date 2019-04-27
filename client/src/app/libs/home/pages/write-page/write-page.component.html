@@ -11,7 +11,7 @@
         <dx-button text="上传文件" style="margin-right: 40px;" type="default" (onClick)="uploadFile()"></dx-button>
         <dx-button text="编辑" style="margin-right: 40px;" type="default" (onClick)="edit()"></dx-button>
         <dx-button text="预览" style="    margin: 20px;" type="default" (onClick)="preview()"></dx-button>
-        <dx-button text="保存" style="    margin: 20px;" type="success" (onClick)="save()"></dx-button>
+
 
     </div>
     <dx-form id="form" [(formData)]="articleMeta">
@@ -28,21 +28,28 @@
                 [editorOptions]="{ items: sourceTypes,displayExpr:'label',valueExpr:'value' }">
             </dxi-item>
         </dxi-item>
-        <dxi-item itemType="group" caption="页尾设置" cssClass="second-group" [colCount]="4">
-            <dxi-item itemType="group">
-                <dxi-item dataField="Address"></dxi-item>
-                <dxi-item dataField="City"></dxi-item>
-                <dxi-item dataField="Position" editorType="dxSelectBox"
-                    [editorOptions]="{ items: positions, value: '' }"></dxi-item>
+
+
+        <dxi-item itemType="group" caption="页尾设置" cssClass="second-group">
+            <dxi-item itemType="group" [colCount]="2">
+                <dxi-item dataField="useRead" [label]="{text:'自定义阅读量'}" editorType="dxSwitch"></dxi-item>
+                <dxi-item dataField="useReadNum" [label]="{text:'阅读量'}"></dxi-item>
+
             </dxi-item>
-            <dxi-item itemType="group">
+            <dxi-item itemType="group" [colCount]="2">
+                <dxi-item dataField="useReading" [label]="{text:'自定义在读量'}" editorType="dxSwitch"></dxi-item>
+                <dxi-item dataField="useReadingNum" [label]="{text:'在读量'}"></dxi-item>
+            </dxi-item>
+
+            <!-- <dxi-item itemType="group">
                 <dxi-item dataField="State" editorType="dxSelectBox" [editorOptions]="{ items: states }"></dxi-item>
                 <dxi-item dataField="ZipCode"></dxi-item>
                 <dxi-item dataField="Mobile" [label]="{text: 'Phone'}" [editorOptions]="{ mask: '+1 (000) 000-0000'}">
                 </dxi-item>
+            </dxi-item> -->
+            <!-- <dxi-item dataField="Notes" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
             </dxi-item>
-            <dxi-item dataField="Notes" [colSpan]="2" editorType="dxTextArea" [editorOptions]="{ height: 140 }">
-            </dxi-item>
+             -->
         </dxi-item>
 
 
@@ -66,7 +73,7 @@
             <dx-button text="上传文件" style="margin-right: 40px;" type="default" (onClick)="uploadFile()"></dx-button>
             <dx-button text="设置" style="margin-right: 40px;" type="default" (onClick)="setMeta()"></dx-button>
             <dx-button text="预览" style="    margin: 20px;" type="default" (onClick)="preview()"></dx-button>
-            <dx-button text="保存" style="    margin: 20px;" type="success" (onClick)="save()"></dx-button>
+            <!-- <dx-button text="保存" style="    margin: 20px;" type="success" (onClick)="save()"></dx-button> -->
 
         </div>
         <textarea name="editor" [value]="markdown" id="editor" style="width:100%"></textarea>
@@ -74,49 +81,24 @@
 </ng-container>
 
 <ng-container *ngIf="state==View.Preview">
-    <dx-button text="编辑" (onClick)="edit()" style="margin: 20px;" type="success"></dx-button>
-
-    <div>
-        <div class="markdown-body typo">
-            <ng-container *ngIf="articleMeta.useAudio">
-                <div class="box" style="    width: 90%;
-                height: 70px;
-                border: 2px solid #ccc;
-                overflow: hidden;
-                position: relative;
-                margin-left: auto;
-                margin-right: auto;">
-                    <img (click)="audioEl.play()" *ngIf="audioEl.paused" style="    border-radius: 50%;"
-                        src="/assets/images/play.jpg" alt="">
-                    <img (click)="audioEl.pause()" *ngIf="!audioEl.paused" style="    border-radius: 50%;"
-                        src="/assets/images/pause.jpg" alt="">
-                    <h5 style="text-align: center">清明上河图</h5>
-                    <div class="tiao">
-                        <span>{{currentTime}}</span>
-                        <div class="tiao-box">
-                            <span class="zm"></span>
-                            <span class="fm"></span>
-                        </div>
-                        <small>{{duration}}</small>
-                    </div>
-                </div>
-            </ng-container>
-            <audio [src]="articleMeta.audioUrl" #audioEl></audio>
-        </div>
-
+    <div style="text-align: right">
+        <dx-button text="编辑" (onClick)="edit()" style="margin: 20px;" type="success"></dx-button>
+        <dx-button text="保存" style="    margin: 20px;" type="success" (onClick)="save()"></dx-button>
     </div>
-
-
-    <div [innerHtml]="html"></div>
+    <article-page [articleMeta]="articleMeta" [(html)]="html"></article-page>
 </ng-container>
 
 <dx-popup class="popup" [width]="800" [height]="250" [showTitle]="true" title="上传成功" [dragEnabled]="false"
     [closeOnOutsideClick]="true" [(visible)]="uploadModalVisible">
-    <div *dxTemplate="let data of 'content'">
-        <div class="dx-field-value">
+    <ng-container>
 
-            <dx-text-box id="uploadUrlInput" [value]="uploadUrl"></dx-text-box>
-            <dx-button text="复制" style="margin: 20px;" (onClick)="copyUploadUrl()"></dx-button>
+        <div *dxTemplate="let data of 'content'">
+            <div class="dx-field-value">
+
+                <dx-text-box id="uploadUrlInput" [value]="uploadUrl"></dx-text-box>
+                <dx-button text="复制" style="margin: 20px;" (onClick)="copyUploadUrl()"></dx-button>
+            </div>
         </div>
-    </div>
+    </ng-container>
+
 </dx-popup>

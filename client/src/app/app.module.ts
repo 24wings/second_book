@@ -21,7 +21,6 @@ import "devextreme-intl";
 import * as messagesZh from "devextreme/localization/messages/zh.json";
 import { RegisterModule } from './shared/components/register/register.component';
 import { TokenInterceptor } from './shared/services/token-interceptor';
-import { NgxMdModule } from 'ngx-md';
 loadMessages(messagesZh);
 //Set locale according the browser language
 locale(navigator.language);

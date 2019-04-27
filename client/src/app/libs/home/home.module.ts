@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DesignPageComponent } from "./pages/design-page/design-page.component";
 import { PageComponent } from "./pages/page/page.component";
 import { WritePageComponent } from './pages/write-page/write-page.component';
+import { ArticlePageComponent } from './pages/article-page/article-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WritePageComponent } from './pages/write-page/write-page.component';
     PersonalPageComponent,
     DesignPageComponent,
     PageComponent,
-    WritePageComponent
+    WritePageComponent,
+    ArticlePageComponent
   ],
   imports: [
     HttpClientModule,
@@ -26,7 +28,8 @@ import { WritePageComponent } from './pages/write-page/write-page.component';
       { path: "", component: HomePageComponent, pathMatch: "full" },
       { path: "page/:dvoFullName", component: PageComponent },
       { path: "personal", component: PersonalPageComponent },
-      { path: "design", component: DesignPageComponent }
+      { path: "design", component: DesignPageComponent },
+      { path: "article/:id", component: ArticlePageComponent }
     ])
   ],
   providers: []

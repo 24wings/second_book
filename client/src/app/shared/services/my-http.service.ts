@@ -54,7 +54,7 @@ export class MyHttpService {
         if (!result.success) {
           return this.createMessage("error", result.data) && false;
         }
-        return result.data;
+        return result.resData;
       })
       .catch(e => {
         this.handleError(e);

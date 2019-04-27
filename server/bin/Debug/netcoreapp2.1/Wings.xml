@@ -1166,6 +1166,29 @@
             <param name="args"></param>
             <returns></returns>
         </member>
+        <member name="T:Wings.Projects.Config.WechatConfig">
+            <summary>
+            微信配置
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Config.WechatConfig.Url">
+            <summary>
+            url
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Config.WechatConfig.Token">
+            <summary>
+            微信Token
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Config.WechatConfig.EncodingAESKey">
+            <summary>
+            消息加密密钥由43位字符组成，可随机修改，字符范围为A-Z，a-z，0-9。
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Wings.Projects.Video.Controllers.UploadOutput">
             <summary>
             上传响应
@@ -1270,6 +1293,36 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.useRead">
+            <summary>
+            使用阅读量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.useReadNum">
+            <summary>
+            定制阅读量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.useReading">
+            <summary>
+            使用正在阅读
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.useReadingNum">
+            <summary>
+            正在阅读数量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.read">
+            <summary>
+            阅读次数
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Wings.Projects.Web.RBAC.Controllers.ArticleController">
             <summary>
             组织管理
@@ -1314,6 +1367,13 @@
             更新数据
             </summary>
             <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.info(System.Int32)">
+            <summary>
+            文章详情
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:Wings.Projects.Web.RBAC.Controllers.MenuController">
@@ -1731,6 +1791,48 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.useRead">
+            <summary>
+            使用阅读量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.useReadNum">
+            <summary>
+            定制阅读量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.useReading">
+            <summary>
+            使用正在阅读
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.useReadingNum">
+            <summary>
+            正在阅读数量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.readNum">
+            <summary>
+            阅读次数
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.useAudio">
+            <summary>
+            使用音频
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.audioUrl">
+            <summary>
+            音频地址
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Wings.Projects.Web.Entity.Post.SourceType">
             <summary>
             来源类型
@@ -1745,6 +1847,41 @@
             <summary>
             转载
             </summary>
+        </member>
+        <member name="T:Wings.Projects.Web.Entity.Comment">
+            <summary>
+            评论表
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Comment.id">
+            <summary>
+            id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Comment.userId">
+            <summary>
+            用户Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Comment.parentId">
+            <summary>
+            上级Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Comment.content">
+            <summary>
+            内容
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Comment.createTime">
+            <summary>
+            创建时间
+            </summary>
+            <value></value>
         </member>
         <member name="T:Wings.Projects.Web.Entity.Rbac.Menu">
             <summary>
@@ -2047,6 +2184,17 @@
             1.null 扫描Wings.Hk 命名空间下的所有表
             </summary>
             <param name="modelBuilder"></param>
+        </member>
+        <member name="T:Wings.Projects.Wechat.WechatController">
+            <summary>
+            组织管理
+            </summary>
+        </member>
+        <member name="M:Wings.Projects.Wechat.WechatController.auth(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            微信授权认证
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Wings.Startup">
             <summary>

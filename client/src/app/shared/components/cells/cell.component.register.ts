@@ -10,3 +10,5 @@ export let cellComponentRegister: any[] = [
     component: WsImageCellComponent
   }
 ];
+
+export let components = cellComponentRegister.map(cel => cel.component);

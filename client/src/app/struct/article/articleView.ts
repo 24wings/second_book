@@ -11,6 +11,8 @@ import { withAuthcationHeaderFunc } from '../util/withAuthcationHeaderFunc';
 type EditorOptions = DevExpress.ui.dxTextBoxOptions;
 
 export let articletView: View = {
+    add: false,
+    delete: false,
     title: "文章管理",
     dvoFullName: "Article",
 
@@ -79,53 +81,53 @@ export let articletView: View = {
 
     ],
     items: [
-        {
-            dataField: "name",
-            label: { text: "产品名字" },
-            dataType: "string"
-        } as DevExpress.ui.dxFormSimpleItem,
-        {
-            dataField: "productTagId",
-            label: { text: "产品分类" },
-            // dataType: "number",
-            editorType: "dxLookup",
-            editorOptions: {
-                dxLookup: {
-                    displayExpr: "name",
-                    valueExpr: "id",
-                    dataSource: AspNetData.createStore({
-                        key: "id",
-                        loadUrl: environment.ip + "/api/Hk/product-tag/load",
-                    })
-                }
-            }
-        } as DevExpress.ui.dxFormSimpleItem,
-        {
-            dataField: "images",
-            label: { text: "产品图片" },
-            editorType: "wsImage" as any
-        } as DevExpress.ui.dxFormSimpleItem,
-        {
-            dataField: "price",
-            label: { text: "价格" },
-            dataType: "number",
-            // editorOptions: { mode: "password" } as EditorOptions
-        } as DevExpress.ui.dxFormSimpleItem,
-        {
-            dataField: "status",
-            caption: "状态",
-            editorType: "dxSelectBox",
-            editorOptions: {
-                displayExpr: "label",
-                valueExpr: "value",
-                dataSource: [ // contains the same values as the "status" field provides
-                    { label: '已提交', value: 0 },
-                    { label: '上架', value: 1 },
-                    { label: '下架', value: 2 }
-                    // ...
-                ]
-            }
-        }
+        // {
+        //     dataField: "name",
+        //     label: { text: "产品名字" },
+        //     dataType: "string"
+        // } as DevExpress.ui.dxFormSimpleItem,
+        // {
+        //     dataField: "productTagId",
+        //     label: { text: "产品分类" },
+        //     // dataType: "number",
+        //     editorType: "dxLookup",
+        //     editorOptions: {
+        //         dxLookup: {
+        //             displayExpr: "name",
+        //             valueExpr: "id",
+        //             dataSource: AspNetData.createStore({
+        //                 key: "id",
+        //                 loadUrl: environment.ip + "/api/Hk/product-tag/load",
+        //             })
+        //         }
+        //     }
+        // } as DevExpress.ui.dxFormSimpleItem,
+        // {
+        //     dataField: "images",
+        //     label: { text: "产品图片" },
+        //     editorType: "wsImage" as any
+        // } as DevExpress.ui.dxFormSimpleItem,
+        // {
+        //     dataField: "price",
+        //     label: { text: "价格" },
+        //     dataType: "number",
+        //     // editorOptions: { mode: "password" } as EditorOptions
+        // } as DevExpress.ui.dxFormSimpleItem,
+        // {
+        //     dataField: "status",
+        //     caption: "状态",
+        //     editorType: "dxSelectBox",
+        //     editorOptions: {
+        //         displayExpr: "label",
+        //         valueExpr: "value",
+        //         dataSource: [ // contains the same values as the "status" field provides
+        //             { label: '已提交', value: 0 },
+        //             { label: '上架', value: 1 },
+        //             { label: '下架', value: 2 }
+        //             // ...
+        //         ]
+        //     }
+        // }
 
     ]
 };

@@ -14,13 +14,11 @@ using Wings.Projects.Web.Controllers;
 using Wings.Projects.Web.Entity.Post;
 using Wings.Projects.Web.Entity.Rbac;
 
-namespace Wings.Projects.Web.RBAC.Controllers
-{
+namespace Wings.Projects.Web.RBAC.Controllers {
     /// <summary>
     /// 创建文章
     /// </summary>
-    public class CreateArticleInput
-    {
+    public class CreateArticleInput {
         /// <summary>
         /// 标题
         /// </summary>
@@ -56,13 +54,38 @@ namespace Wings.Projects.Web.RBAC.Controllers
         /// </summary>
         /// <value></value>
         public SourceType sourceType { get; set; } = SourceType.Create;
+        /// <summary>
+        /// 使用阅读量
+        /// </summary>
+        /// <value></value>
+        public bool useRead { get; set; } = false;
+        /// <summary>
+        /// 定制阅读量
+        /// </summary>
+        /// <value></value>
+        public int useReadNum { get; set; } = 0;
+        /// <summary>
+        /// 使用正在阅读
+        /// </summary>
+        /// <value></value>
+        public bool useReading { get; set; } = false;
+        /// <summary>
+        /// 正在阅读数量
+        /// </summary>
+        /// <value></value>
+        public int useReadingNum { get; set; } = 0;
+        /// <summary>
+        /// 阅读次数
+        /// </summary>
+        /// <value></value>
+        public int read { get; set; } = 0;
+
     }
     /// <summary>
     /// 组织管理
     /// </summary>
-    [Route("/api/Hk/article")]
-    public class ArticleController : CurdController<Article>
-    {
+    [Route ("/api/Hk/article")]
+    public class ArticleController : CurdController<Article> {
         private RcxhContext db { get; set; }
         /// <summary>
         /// 用户业务
@@ -74,8 +97,7 @@ namespace Wings.Projects.Web.RBAC.Controllers
         /// </summary>
         /// <param name="_db"></param>
         /// <param name="_userService"></param>
-        public ArticleController(RcxhContext _db, IUserService _userService) : base(_db)
-        {
+        public ArticleController (RcxhContext _db, IUserService _userService) : base (_db) {
             this.userService = _userService;
             db = _db;
         }
@@ -84,12 +106,11 @@ namespace Wings.Projects.Web.RBAC.Controllers
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        [HttpGet("[action]")]
-        public object load(DataSourceLoadOptions options)
-        {
-            var tokenUser = this.userService.getUserFromAuthcationHeader();
+        [HttpGet ("[action]")]
+        public object load (DataSourceLoadOptions options) {
+            var tokenUser = this.userService.getUserFromAuthcationHeader ();
             var query = (from a in this.db.articles where a.userId == tokenUser.id select a);
-            return DataSourceLoader.Load(query, options);
+            return DataSourceLoader.Load (query, options);
         }
         /// <summary>
         /// 增加数据
@@ -97,10 +118,8 @@ namespace Wings.Projects.Web.RBAC.Controllers
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
-        public object insert([FromBody]CreateArticleInput input)
-        {
-            var article = new Article
-            {
+        public object insert ([FromBody] CreateArticleInput input) {
+            var article = new Article {
                 html = input.html,
                 title = input.title,
                 markdown = input.markdown,
@@ -109,19 +128,16 @@ namespace Wings.Projects.Web.RBAC.Controllers
                 bannerImageUrl = input.bannerImageUrl,
                 summary = input.summary,
             };
-            var tokenUser = this.userService.getUserFromAuthcationHeader();
-            if (tokenUser != null)
-            {
+            var tokenUser = this.userService.getUserFromAuthcationHeader ();
+            if (tokenUser != null) {
                 article.userId = tokenUser.id;
                 article.charNum = input.markdown.Length;
-                this.db.articles.Add(article);
-                this.db.SaveChanges();
+                this.db.articles.Add (article);
+                this.db.SaveChanges ();
 
             }
 
-
-
-            return Rtn<Article>.Success(article);
+            return Rtn<Article>.Success (article);
         }
 
         /// <summary>
@@ -130,9 +146,8 @@ namespace Wings.Projects.Web.RBAC.Controllers
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpDelete]
-        public object remove(DevExtremInput input)
-        {
-            return this.remove(input.key, this.db.articles);
+        public object remove (DevExtremInput input) {
+            return this.remove (input.key, this.db.articles);
         }
         /// <summary>
         /// 更新数据
@@ -140,9 +155,23 @@ namespace Wings.Projects.Web.RBAC.Controllers
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPut]
-        public object update([FromForm] DevExtremInput input)
-        {
-            return this.update(input, this.db.articles);
+        public object update ([FromForm] DevExtremInput input) {
+            return this.update (input, this.db.articles);
+        }
+
+        /// <summary>
+        /// 文章详情
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet ("[action]")]
+        public Rtn<Article> info (int id) {
+            var article = this.db.articles.Find (id);
+            if (article != null) {
+                return Rtn<Article>.Success (article);
+            } else {
+                return Rtn<Article>.Error ("文章已经删除");
+            }
         }
     }
 }
