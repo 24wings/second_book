@@ -1,10 +1,14 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Wings.Projects.Web.Entity {
+namespace Wings.Projects.Web.Entity
+{
     /// <summary>
     /// 评论表
     /// </summary>
-    public class Comment {
+    [Table("comment")]
+    public class Comment
+    {
         /// <summary>
         /// id
         /// </summary>
@@ -31,6 +35,11 @@ namespace Wings.Projects.Web.Entity {
         /// </summary>
         /// <value></value>
         public DateTime createTime { get; set; } = DateTime.Now;
+        /// <summary>
+        /// 文章id
+        /// </summary>
+        /// <value></value>
+        public int? articleId { get; set; }
 
     }
 }

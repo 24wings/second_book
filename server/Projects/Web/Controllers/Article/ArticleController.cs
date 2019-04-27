@@ -11,14 +11,17 @@ using Newtonsoft.Json;
 using Wings.Base.Common.Attrivute;
 using Wings.Base.Common.DTO;
 using Wings.Projects.Web.Controllers;
+using Wings.Projects.Web.Entity;
 using Wings.Projects.Web.Entity.Post;
 using Wings.Projects.Web.Entity.Rbac;
 
-namespace Wings.Projects.Web.RBAC.Controllers {
+namespace Wings.Projects.Web.RBAC.Controllers
+{
     /// <summary>
     /// 创建文章
     /// </summary>
-    public class CreateArticleInput {
+    public class CreateArticleInput : Article
+    {
         /// <summary>
         /// 标题
         /// </summary>
@@ -79,13 +82,39 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// </summary>
         /// <value></value>
         public int read { get; set; } = 0;
+        /// <summary>
+        /// 地址名称
+        /// </summary>
+        /// <value></value>
+        public string addressName { get; set; }
 
+
+
+
+
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    public class CommentCreateInput
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public int articleId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public string content { get; set; }
     }
     /// <summary>
     /// 组织管理
     /// </summary>
-    [Route ("/api/Hk/article")]
-    public class ArticleController : CurdController<Article> {
+    [Route("/api/Hk/article")]
+    public class ArticleController : CurdController<Article>
+    {
         private RcxhContext db { get; set; }
         /// <summary>
         /// 用户业务
@@ -97,7 +126,8 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// </summary>
         /// <param name="_db"></param>
         /// <param name="_userService"></param>
-        public ArticleController (RcxhContext _db, IUserService _userService) : base (_db) {
+        public ArticleController(RcxhContext _db, IUserService _userService) : base(_db)
+        {
             this.userService = _userService;
             db = _db;
         }
@@ -106,11 +136,12 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        [HttpGet ("[action]")]
-        public object load (DataSourceLoadOptions options) {
-            var tokenUser = this.userService.getUserFromAuthcationHeader ();
+        [HttpGet("[action]")]
+        public object load(DataSourceLoadOptions options)
+        {
+            var tokenUser = this.userService.getUserFromAuthcationHeader();
             var query = (from a in this.db.articles where a.userId == tokenUser.id select a);
-            return DataSourceLoader.Load (query, options);
+            return DataSourceLoader.Load(query, options);
         }
         /// <summary>
         /// 增加数据
@@ -118,8 +149,10 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
-        public object insert ([FromBody] CreateArticleInput input) {
-            var article = new Article {
+        public object insert([FromBody] CreateArticleInput input)
+        {
+            var article = new Article
+            {
                 html = input.html,
                 title = input.title,
                 markdown = input.markdown,
@@ -128,16 +161,17 @@ namespace Wings.Projects.Web.RBAC.Controllers {
                 bannerImageUrl = input.bannerImageUrl,
                 summary = input.summary,
             };
-            var tokenUser = this.userService.getUserFromAuthcationHeader ();
-            if (tokenUser != null) {
+            var tokenUser = this.userService.getUserFromAuthcationHeader();
+            if (tokenUser != null)
+            {
                 article.userId = tokenUser.id;
                 article.charNum = input.markdown.Length;
-                this.db.articles.Add (article);
-                this.db.SaveChanges ();
+                this.db.articles.Add(article);
+                this.db.SaveChanges();
 
             }
 
-            return Rtn<Article>.Success (article);
+            return Rtn<Article>.Success(article);
         }
 
         /// <summary>
@@ -146,8 +180,9 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpDelete]
-        public object remove (DevExtremInput input) {
-            return this.remove (input.key, this.db.articles);
+        public object remove(DevExtremInput input)
+        {
+            return this.remove(input.key, this.db.articles);
         }
         /// <summary>
         /// 更新数据
@@ -155,8 +190,9 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPut]
-        public object update ([FromForm] DevExtremInput input) {
-            return this.update (input, this.db.articles);
+        public object update([FromForm] DevExtremInput input)
+        {
+            return this.update(input, this.db.articles);
         }
 
         /// <summary>
@@ -164,14 +200,52 @@ namespace Wings.Projects.Web.RBAC.Controllers {
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet ("[action]")]
-        public Rtn<Article> info (int id) {
-            var article = this.db.articles.Find (id);
-            if (article != null) {
-                return Rtn<Article>.Success (article);
-            } else {
-                return Rtn<Article>.Error ("文章已经删除");
+        [HttpGet("[action]")]
+        public Rtn<Article> info(int id)
+        {
+            var article = this.db.articles.Find(id);
+            if (article != null)
+            {
+                return Rtn<Article>.Success(article);
+            }
+            else
+            {
+                return Rtn<Article>.Error("文章已经删除");
             }
         }
+
+        /// <summary>
+        /// 创建评论
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost("[action]")]
+        public Rtn<Article> createComment([FromBody] CommentCreateInput input)
+        {
+            var article = this.db.articles.Find(input.articleId);
+
+            if (article != null)
+            {
+                var newComment = new Comment { articleId = input.articleId, content = input.content };
+                this.db.comments.Add(newComment);
+                if (article.commentNum != null)
+                {
+                    article.commentNum++;
+                }
+                else
+                {
+                    article.commentNum = 1;
+                }
+                this.db.SaveChanges();
+                return Rtn<Article>.Success(article);
+
+            }
+            else
+            {
+                return Rtn<Article>.Error("文章不存在");
+            }
+
+        }
+
     }
 }

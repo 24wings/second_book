@@ -6,6 +6,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Wings.Base.Common.Attrivute;
+using Wings.Projects.Web.Entity;
 using Wings.Projects.Web.Entity.Post;
 using Wings.Projects.Web.Entity.Rbac;
 
@@ -52,6 +53,11 @@ namespace Wings.Projects.Web
         /// </summary>
         /// <value></value>
         public DbSet<Article> articles { get; set; }
+        /// <summary>
+        /// 评论表
+        /// </summary>
+        /// <value></value>
+        public DbSet<Comment> comments { get; set; }
 
 
 

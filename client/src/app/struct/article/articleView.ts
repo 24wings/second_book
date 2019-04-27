@@ -50,29 +50,92 @@ export let articletView: View = {
             dataType: "number",
         } as DxiDataGridColumn,
         {
-            dataField: "price",
-            caption: "价格",
+            dataField: "readNum",
+            caption: "真实阅读量",
             dataType: "number",
 
         } as DxiDataGridColumn,
         {
-            dataField: "status",
-            caption: "状态",
-            lookup: {
-                dataSource: [ // contains the same values as the "status" field provides
-                    { label: '已提交', value: 0 },
-                    { label: '上架', value: 1 },
-                    { label: '下架', value: 2 }
-                    // ...
-                ]
-            }
+            dataField: "useRead",
+            caption: "定制阅读",
+            dataType: "boolean",
 
-        } as any,
-        {
-            dataField: "summary",
-            caption: "简述",
-            dataType: "string"
         } as DxiDataGridColumn,
+        {
+            dataField: "useReadNum",
+            caption: "定制阅读量",
+            dataType: "number",
+
+        } as DxiDataGridColumn,
+        {
+            dataField: "useReading",
+            caption: "定制在读",
+            dataType: "boolean",
+
+        } as DxiDataGridColumn,
+        {
+            dataField: "useReadingNum",
+            caption: "定制在读量",
+            dataType: "number",
+
+        },
+        {
+            dataField: "useAddress",
+            caption: "定制地址",
+            dataType: "boolean",
+
+        },
+        {
+            dataField: "addressName",
+            caption: "地址名称",
+            dataType: "number",
+
+        },
+        {
+            dataField: "address",
+            caption: "详细地址",
+            dataType: "number",
+
+        },
+        {
+            dataField: "contactPhone",
+            caption: "联系电话",
+            dataType: "number",
+
+        },
+        {
+            dataField: "useReadingNum",
+            caption: "定制在读量",
+            dataType: "number",
+
+        },
+
+        {
+            dataField: "commentNum",
+            caption: "评论数量",
+            dataType: "number"
+        } as any,
+
+
+
+        // {
+        //     dataField: "status",
+        //     caption: "状态",
+        //     lookup: {
+        //         dataSource: [ // contains the same values as the "status" field provides
+        //             { label: '已提交', value: 0 },
+        //             { label: '上架', value: 1 },
+        //             { label: '下架', value: 2 }
+        //             // ...
+        //         ]
+        //     }
+
+        // } as any,
+        // {
+        //     dataField: "summary",
+        //     caption: "简述",
+        //     dataType: "string"
+        // } as DxiDataGridColumn,
         {
             dataField: "createTime",
             caption: "发布时间",
@@ -81,54 +144,64 @@ export let articletView: View = {
 
     ],
     items: [
-        // {
-        //     dataField: "name",
-        //     label: { text: "产品名字" },
-        //     dataType: "string"
-        // } as DevExpress.ui.dxFormSimpleItem,
-        // {
-        //     dataField: "productTagId",
-        //     label: { text: "产品分类" },
-        //     // dataType: "number",
-        //     editorType: "dxLookup",
-        //     editorOptions: {
-        //         dxLookup: {
-        //             displayExpr: "name",
-        //             valueExpr: "id",
-        //             dataSource: AspNetData.createStore({
-        //                 key: "id",
-        //                 loadUrl: environment.ip + "/api/Hk/product-tag/load",
-        //             })
-        //         }
-        //     }
-        // } as DevExpress.ui.dxFormSimpleItem,
-        // {
-        //     dataField: "images",
-        //     label: { text: "产品图片" },
-        //     editorType: "wsImage" as any
-        // } as DevExpress.ui.dxFormSimpleItem,
-        // {
-        //     dataField: "price",
-        //     label: { text: "价格" },
-        //     dataType: "number",
-        //     // editorOptions: { mode: "password" } as EditorOptions
-        // } as DevExpress.ui.dxFormSimpleItem,
-        // {
-        //     dataField: "status",
-        //     caption: "状态",
-        //     editorType: "dxSelectBox",
-        //     editorOptions: {
-        //         displayExpr: "label",
-        //         valueExpr: "value",
-        //         dataSource: [ // contains the same values as the "status" field provides
-        //             { label: '已提交', value: 0 },
-        //             { label: '上架', value: 1 },
-        //             { label: '下架', value: 2 }
-        //             // ...
-        //         ]
-        //     }
-        // }
+        {
+            dataField: "title",
+            label: { text: "标题" },
+            dataType: "string"
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "useRead",
+            label: { text: "定制阅读" },
+            editorType: "dxSwitch",
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "useReadNum",
+            label: { text: "定制阅读量" },
+            editorType: "dxNumberBox",
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "useReading",
+            label: { text: "定制在读" },
+            editorType: "dxSwitch",
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "useReadingNum",
+            label: { text: "定制在读量" },
+            editorType: "dxNumberBox",
+        } as DevExpress.ui.dxFormSimpleItem,
 
+        {
+            dataField: "useAddress",
+            label: { text: "启用地址" },
+            editorType: "dxSwitch",
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "addressName",
+            label: { text: "地址名称" },
+            dataType: "string"
+        } as DevExpress.ui.dxFormSimpleItem,
+
+        {
+            dataField: "address",
+            label: { text: "详细地址" },
+
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "contactPhone",
+            label: { text: "联系电话" },
+
+        } as DevExpress.ui.dxFormSimpleItem,
+
+        {
+            dataField: "lng",
+            label: { text: "经度" },
+
+        } as DevExpress.ui.dxFormSimpleItem,
+        {
+            dataField: "lat",
+            label: { text: "维度" },
+
+        } as DevExpress.ui.dxFormSimpleItem,
     ]
 };
 

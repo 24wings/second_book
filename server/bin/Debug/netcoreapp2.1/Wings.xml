@@ -1329,6 +1329,29 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CreateArticleInput.addressName">
+            <summary>
+            地址名称
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Wings.Projects.Web.RBAC.Controllers.CommentCreateInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CommentCreateInput.articleId">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.RBAC.Controllers.CommentCreateInput.content">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Wings.Projects.Web.RBAC.Controllers.ArticleController">
             <summary>
             组织管理
@@ -1380,6 +1403,13 @@
             文章详情
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Web.RBAC.Controllers.ArticleController.createComment(Wings.Projects.Web.RBAC.Controllers.CommentCreateInput)">
+            <summary>
+            创建评论
+            </summary>
+            <param name="input"></param>
             <returns></returns>
         </member>
         <member name="T:Wings.Projects.Web.RBAC.Controllers.MenuController">
@@ -1839,6 +1869,48 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.lng">
+            <summary>
+            精度
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.lat">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.addressName">
+            <summary>
+            地址名字
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.address">
+            <summary>
+            地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.contactPhone">
+            <summary>
+            联系电话
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.useAddress">
+            <summary>
+            启用地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Post.Article.commentNum">
+            <summary>
+            评论数量
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Wings.Projects.Web.Entity.Post.SourceType">
             <summary>
             来源类型
@@ -1886,6 +1958,12 @@
         <member name="P:Wings.Projects.Web.Entity.Comment.createTime">
             <summary>
             创建时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Wings.Projects.Web.Entity.Comment.articleId">
+            <summary>
+            文章id
             </summary>
             <value></value>
         </member>
@@ -2178,6 +2256,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.comments">
+            <summary>
+            评论表
+            </summary>
+            <value></value>
+        </member>
         <member name="M:Wings.Projects.Web.RcxhContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <summary>
             
@@ -2202,11 +2286,18 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Wings.Projects.Wechat.WechatController.oauth(System.String)">
+        <member name="M:Wings.Projects.Wechat.WechatController.getOauthUrl(System.String)">
             <summary>
             微信授权
+            http://localhost/api/wechat/oauth2/getOauthUrl?returnUrl=http://localhost:4200/home/article/25
             </summary>
             <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wings.Projects.Wechat.WechatController.userInfoCallback(System.String,System.String,System.String)">
+            <summary>
+            oauth2认证
+            </summary>
             <returns></returns>
         </member>
         <member name="T:Wings.Startup">

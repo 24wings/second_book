@@ -3,6 +3,8 @@
 /// 创建文章
 /// </summary>
 export class Article {
+
+    id?: number;
     /// <summary>
     /// 标题
     /// </summary>
@@ -68,6 +70,13 @@ export class Article {
     audioUrl?: string;
     audioName?: string = "";
     readingNum: number;
+
+    useAddress?: boolean;
+    address?: string;
+    addressName?: string;
+    lng
+    lat
+    contactPhone
 
 }
 

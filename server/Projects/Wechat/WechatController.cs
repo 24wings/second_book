@@ -32,6 +32,7 @@ namespace Wings.Projects.Wechat
 
         /// <summary>
         /// 微信授权
+        /// http://localhost/api/wechat/oauth2/getOauthUrl?returnUrl=http://localhost:4200/home/article/25
         /// </summary>
         /// <param name="returnUrl"></param>
         /// <returns></returns>
@@ -40,20 +41,22 @@ namespace Wings.Projects.Wechat
         {
             Console.WriteLine("hahah");
             var state = "JeffreySu-" + DateTime.Now.Subtract(new DateTime(1970, 1, 1, 1, 0, 0, 0)).TotalMilliseconds;//随机数，用于识别请求可靠性
-            // Session["State"] = state;//储存随机数到Session
-
+                                                                                                                     // Session["State"] = state;//储存随机数到Session
+                                                                                                                     // var url = "http://115.29.64.6/api/wechat/oauth2/UserInfoCallback?returnUrl=" + returnUrl.UrlEncode();
+            var url = "http://localhost/api/wechat/oauth2/UserInfoCallback?returnUrl=" + returnUrl.UrlEncode();
             //此页面引导用户点击授权
             var UrlUserInfo =
                 OAuthApi
-                .GetAuthorizeUrl(WechatConfig.AppId,
-                "http://115.29.64.6/api/wechat/oauth2/UserInfoCallback?returnUrl=" + returnUrl.UrlEncode(),
+                .GetAuthorizeUrl(WechatConfig.AppId, url,
                 state, OAuthScope.snsapi_userinfo);
             // var UrlBase =
             //     OAuthApi.GetAuthorizeUrl(WechatConfig.AppId,
             //     "https://115.29.64.6/api/wechat/oauth2/BaseCallback?returnUrl=" + returnUrl.UrlEncode(),
             //     state, OAuthScope.snsapi_base);
 
-            return this.Redirect(UrlUserInfo);
+            // return this.Redirect(UrlUserInfo);
+            return this.Redirect(url);
+
         }
         /// <summary>
         /// oauth2认证
@@ -63,7 +66,9 @@ namespace Wings.Projects.Wechat
         public object userInfoCallback(string code, string state, string returnUrl)
         {
 
-            return new { code = code, state = state, returnUrl = returnUrl };
+            var res = new { code = code, state = state, returnUrl = returnUrl };
+
+            return this.Redirect(returnUrl);
 
         }
 

@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Wings.Projects.Web.Entity.Post {
+namespace Wings.Projects.Web.Entity.Post
+{
     /// <summary>
     /// 菜单
     /// </summary>
-    [Table ("article")]
-    public class Article {
+    [Table("article")]
+    public class Article
+    {
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
         [Key]
-        [DatabaseGenerated (DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         /// <summary>
         /// 标题
@@ -107,12 +109,48 @@ namespace Wings.Projects.Web.Entity.Post {
         /// </summary>
         /// <value></value>
         public string audioUrl { get; set; } = "";
+        /// <summary>
+        /// 精度
+        /// </summary>
+        /// <value></value>
+        public decimal? lng { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        public decimal? lat { get; set; }
+        /// <summary>
+        /// 地址名字
+        /// </summary>
+        /// <value></value>
+        public string addressName { get; set; }
+        /// <summary>
+        /// 地址
+        /// </summary>
+        /// <value></value>
+        public string address { get; set; }
+        /// <summary>
+        /// 联系电话
+        /// </summary>
+        /// <value></value>
+        public string contactPhone { get; set; }
+        /// <summary>
+        /// 启用地址
+        /// </summary>
+        /// <value></value>
+        public bool? useAddress { get; set; }
+        /// <summary>
+        /// 评论数量
+        /// </summary>
+        /// <value></value>
+        public int? commentNum { get; set; } = 0;
 
     }
     /// <summary>
     /// 来源类型
     /// </summary>
-    public enum SourceType {
+    public enum SourceType
+    {
         /// <summary>
         /// 原创
         /// </summary>
