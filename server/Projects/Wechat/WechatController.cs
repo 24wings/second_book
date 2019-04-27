@@ -38,6 +38,7 @@ namespace Wings.Projects.Wechat
         [HttpGet]
         public object oauth(string returnUrl)
         {
+            Console.WriteLine("hahah");
             var state = "JeffreySu-" + DateTime.Now.Subtract(new DateTime(1970, 1, 1, 1, 0, 0, 0)).TotalMilliseconds;//随机数，用于识别请求可靠性
             // Session["State"] = state;//储存随机数到Session
 
