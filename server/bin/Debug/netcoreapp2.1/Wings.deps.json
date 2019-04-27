@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "6d4aa849b9d816fc14aeb11543795e5294603f4c"
+    "signature": "372cf0fdd27e86b9edda829dbcf3f06f0171cbfc"
   },
   "compilationOptions": {
     "defines": [
@@ -42,7 +42,6 @@
           "NSwag.AspNetCore": "12.0.18",
           "Newtonsoft.Json": "12.0.1",
           "Pomelo.EntityFrameworkCore.MySql": "2.1.0",
-          "Senparc.Weixin": "6.0.0",
           "Senparc.Weixin.MP": "14.7.1",
           "System.IdentityModel.Tokens.Jwt": "5.4.0",
           "aliyun-net-sdk-core": "1.2.6",
@@ -713,54 +712,29 @@
           "Microsoft.NETCore.Targets": "2.1.0"
         }
       },
-      "Senparc.CO2NET/0.2.10": {
+      "Senparc.Weixin/4.16.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Hosting": "2.1.1",
-          "Microsoft.AspNetCore.Http": "2.1.1",
           "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
-          "Microsoft.Extensions.Caching.Abstractions": "2.1.1",
-          "Microsoft.Extensions.DependencyInjection": "2.1.1",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.1",
           "Newtonsoft.Json": "12.0.1",
           "System.Diagnostics.TraceSource": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
           "System.Threading.Thread": "4.3.0",
           "System.Xml.XmlSerializer": "4.3.0"
         },
         "runtime": {
-          "lib/netcoreapp2.1/Senparc.CO2NET.dll": {
-            "assemblyVersion": "0.2.10.0",
-            "fileVersion": "0.2.10.0"
+          "lib/netstandard2.0/Senparc.Weixin.dll": {
+            "assemblyVersion": "4.16.1.0",
+            "fileVersion": "4.16.1.0"
           }
         },
         "compile": {
-          "lib/netcoreapp2.1/Senparc.CO2NET.dll": {}
-        }
-      },
-      "Senparc.Weixin/6.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Hosting": "2.1.1",
-          "Microsoft.AspNetCore.Http": "2.1.1",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
-          "Newtonsoft.Json": "12.0.1",
-          "Senparc.CO2NET": "0.2.10",
-          "System.Diagnostics.TraceSource": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Xml.XmlSerializer": "4.3.0"
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/Senparc.Weixin.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/netcoreapp2.1/Senparc.Weixin.dll": {}
+          "lib/netstandard2.0/Senparc.Weixin.dll": {}
         }
       },
       "Senparc.Weixin.MP/14.7.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Http": "2.1.1",
-          "Senparc.Weixin": "6.0.0",
+          "Senparc.Weixin": "4.16.1",
           "System.Xml.XPath.XmlDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
@@ -4772,19 +4746,12 @@
       "path": "runtime.native.system.net.security/4.3.0",
       "hashPath": "runtime.native.system.net.security.4.3.0.nupkg.sha512"
     },
-    "Senparc.CO2NET/0.2.10": {
+    "Senparc.Weixin/4.16.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3PoRngIXsY8Nuh+vFgvRZ/hwMhwqXGwM08pFZLRx3v74FCu+c2lwCLyAErDBlR2x1FapyE5BYYHkACz/P1K8ZQ==",
-      "path": "senparc.co2net/0.2.10",
-      "hashPath": "senparc.co2net.0.2.10.nupkg.sha512"
-    },
-    "Senparc.Weixin/6.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-acP+eoigDdqI7GgiA2I/ZHfn5P0s/76D3YvBO+l7iF9GCZQsF4xq2xRWVsaU0YNdfZlFqZzzpBNN1QItVVGITA==",
-      "path": "senparc.weixin/6.0.0",
-      "hashPath": "senparc.weixin.6.0.0.nupkg.sha512"
+      "sha512": "sha512-1MMcVFpNqdLY9NXC2ykHVctZCJsDhvDr503bNcq+UjOwfzgZkCXBJrnhsbaVuG2+ndVv+myGAsQ9qjyCeXVugA==",
+      "path": "senparc.weixin/4.16.1",
+      "hashPath": "senparc.weixin.4.16.1.nupkg.sha512"
     },
     "Senparc.Weixin.MP/14.7.1": {
       "type": "package",

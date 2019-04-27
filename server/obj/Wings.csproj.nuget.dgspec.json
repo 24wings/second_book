@@ -116,10 +116,6 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
-            "Senparc.Weixin": {
-              "target": "Package",
-              "version": "[5.3.11, )"
-            },
             "Senparc.Weixin.MP": {
               "target": "Package",
               "version": "[14.6.15, )"
