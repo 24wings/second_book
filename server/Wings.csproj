@@ -40,6 +40,7 @@
     <!-- <PackageReference Include="Senparc.Weixin.Open" Version="4.4.5.2" /> -->
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
   </ItemGroup>
 

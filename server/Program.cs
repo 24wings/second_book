@@ -21,9 +21,10 @@ namespace Wings
         /// <param name="args"></param>
         public static void Main(string[] args)
         {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             CreateWebHostBuilder(args)
                 //  .MigrateDbContext<WingsContext>((context, services) =>
-                //     { })
+                //     { }) 
                 .Build()
                 .Run();
         }

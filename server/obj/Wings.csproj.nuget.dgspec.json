@@ -124,6 +124,10 @@
               "target": "Package",
               "version": "[5.4.0, )"
             },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            },
             "aliyun-net-sdk-core": {
               "target": "Package",
               "version": "[1.2.6, )"
