@@ -71,7 +71,14 @@ namespace Wings.Projects.Wechat
 
             var res = new { code = code, state = state, returnUrl = returnUrl };
             Console.WriteLine("=================:" + code);
-            return this.Redirect(returnUrl);
+
+            OAuthAccessTokenResult result = null;
+            result = OAuthApi.GetAccessToken(WechatConfig.AppId, WechatConfig.secret, code);
+
+            OAuthUserInfo userInfo = OAuthApi.GetUserInfo(result.access_token, result.openid);
+            return userInfo;
+            // return this.Redirect(returnUrl);
+
 
         }
 
