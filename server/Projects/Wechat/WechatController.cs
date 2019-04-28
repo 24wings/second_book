@@ -73,7 +73,7 @@ namespace Wings.Projects.Wechat
                 state, OAuthScope.snsapi_userinfo);
             Console.WriteLine(url);
             Console.WriteLine(UrlUserInfo);
-            // this.HttpContext.Session.Set("ID",state);
+            // this.HttpContext.Session.Set("State",state.ge);
             // Cook
             // var UrlBase =
             //     OAuthApi.GetAuthorizeUrl(WechatConfig.AppId,
