@@ -166,7 +166,7 @@ namespace Wings.Projects.Wechat
             //ViewData["Signature"] = signature;
             #endregion
 
-            var url = HttpContext.Request.Host + HttpContext.Request.Path;
+            var url = "http://" + HttpContext.Request.Host + HttpContext.Request.Path;
             Console.WriteLine("url:" + url);
             var jssdkUiPackage = JSSDKHelper.GetJsSdkUiPackage(WechatConfig.AppId, WechatConfig.secret, url);
             //ViewData["JsSdkUiPackage"] = jssdkUiPackage;
