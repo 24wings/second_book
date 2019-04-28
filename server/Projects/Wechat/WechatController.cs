@@ -132,7 +132,7 @@ namespace Wings.Projects.Wechat
             }
             else
             {
-                return Redirect(returnUrl);
+                return Content("您拒绝了授权");
             }
         }
 
