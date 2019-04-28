@@ -70,7 +70,7 @@ namespace Wings.Projects.Wechat
         {
 
             var res = new { code = code, state = state, returnUrl = returnUrl };
-
+            Console.WriteLine("=================:" + code);
             return this.Redirect(returnUrl);
 
         }
