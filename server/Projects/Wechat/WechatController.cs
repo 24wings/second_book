@@ -54,8 +54,8 @@ namespace Wings.Projects.Wechat
             //     "https://115.29.64.6/api/wechat/oauth2/BaseCallback?returnUrl=" + returnUrl.UrlEncode(),
             //     state, OAuthScope.snsapi_base);
 
-            // return this.Redirect(UrlUserInfo);
-            return this.Redirect(url);
+            return this.Redirect(UrlUserInfo);
+            // return this.Redirect(url);
 
         }
         /// <summary>

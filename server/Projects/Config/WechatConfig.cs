@@ -9,7 +9,7 @@ namespace Wings.Projects.Config
         /// AppId
         /// </summary>
         /// <value></value>
-        public static string AppId { get; } = "wx78e5285e4bef6c54";
+        public static string AppId { get; } = "wx16c2fb03390e18ef";
         /// <summary>
         /// url
         /// </summary>
@@ -24,6 +24,7 @@ namespace Wings.Projects.Config
         /// 消息加密密钥由43位字符组成，可随机修改，字符范围为A-Z，a-z，0-9。
         /// </summary>
         /// <value></value>
-        public static string EncodingAESKey { get; } = "g4BZtbw4H2Z5A8A1B94d9T5bkA5WAWn1DZ1ANb1289B";
+        public static string EncodingAESKey { get; } = "DXKmGZQgWeLZYxiCcbn8jv3u0Lh4xGptVcrZZYCJO7g";
+        public static string secret { get; } = "a7b5a33de3e3ddae22e18fe03fc73cc8";
     }
 }
