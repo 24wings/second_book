@@ -13,6 +13,7 @@ using Cucr.CucrSaas.App.Service;
 using Wings.Projects.Web.Entity.Rbac;
 using System.Linq;
 using Senparc.Weixin.MP.Helpers;
+using Wings.Base.Common.DTO;
 
 namespace Wings.Projects.Wechat
 {
@@ -148,7 +149,7 @@ namespace Wings.Projects.Wechat
         }
 
         [HttpGet("[action]")]
-        public object jssdk()
+        public Rtn<object> jssdk()
         {
             #region v13.6.4之前的写法
             ////获取时间戳
@@ -173,7 +174,7 @@ namespace Wings.Projects.Wechat
             //ViewData["NonceStr"] = jssdkUiPackage.NonceStr;
             //ViewData["Signature"] = jssdkUiPackage.Signature;
 
-            return jssdkUiPackage;
+            return Rtn<object>.Success(jssdkUiPackage);
         }
     }
 }

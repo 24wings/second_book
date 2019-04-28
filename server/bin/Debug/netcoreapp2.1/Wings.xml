@@ -2281,6 +2281,11 @@
             </summary>
             <param name="modelBuilder"></param>
         </member>
+        <member name="T:Wings.Projects.Wechat.TokenUser">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Wings.Projects.Wechat.WechatController">
             <summary>
             组织管理
