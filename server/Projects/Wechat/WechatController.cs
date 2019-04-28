@@ -115,7 +115,7 @@ namespace Wings.Projects.Wechat
                     this.db.wxUsers.Add(newWxUser);
                     newUser.wxUserId = newWxUser.id;
                     this.db.users.Add(newUser);
-
+                    Console.WriteLine("returnUrl" + returnUrl);
                     return Redirect(returnUrl + "?userId=" + newUser.id);
                     // return userInfo;
                     // return this.Redirect(returnUrl);
@@ -132,7 +132,7 @@ namespace Wings.Projects.Wechat
             }
             else
             {
-                return null;
+                return Redirect(returnUrl);
             }
         }
 
