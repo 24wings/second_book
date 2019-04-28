@@ -94,39 +94,46 @@ namespace Wings.Projects.Wechat
 
             var res = new { code = code, state = state, returnUrl = returnUrl };
             Console.WriteLine("=================:" + code);
-
-            OAuthAccessTokenResult result = null;
-            result = OAuthApi.GetAccessToken(WechatConfig.AppId, WechatConfig.secret, code);
-
-            OAuthUserInfo userInfo = OAuthApi.GetUserInfo(result.access_token, result.openid);
-            var wxUser = (from u in this.db.wxUsers where u.openid == userInfo.openid select u).FirstOrDefault();
-            if (wxUser == null)
+            if (code != null && code != String.Empty)
             {
-                var newUser = new User { nickname = userInfo.nickname, headimg = userInfo.headimgurl };
-                // 新用户注册
-                var newWxUser = new WxUser
-                {
-                    openid = userInfo.openid,
-                    nickname = userInfo.nickname,
-                    headimg = userInfo.headimgurl
-                };
-                this.db.wxUsers.Add(newWxUser);
-                newUser.wxUserId = newWxUser.id;
-                this.db.users.Add(newUser);
 
-                return Redirect(returnUrl + "?userId=" + newUser.id);
-                // return userInfo;
-                // return this.Redirect(returnUrl);
+                OAuthAccessTokenResult result = null;
+                result = OAuthApi.GetAccessToken(WechatConfig.AppId, WechatConfig.secret, code);
+
+                OAuthUserInfo userInfo = OAuthApi.GetUserInfo(result.access_token, result.openid);
+                var wxUser = (from u in this.db.wxUsers where u.openid == userInfo.openid select u).FirstOrDefault();
+                if (wxUser == null)
+                {
+                    var newUser = new User { nickname = userInfo.nickname, headimg = userInfo.headimgurl };
+                    // 新用户注册
+                    var newWxUser = new WxUser
+                    {
+                        openid = userInfo.openid,
+                        nickname = userInfo.nickname,
+                        headimg = userInfo.headimgurl
+                    };
+                    this.db.wxUsers.Add(newWxUser);
+                    newUser.wxUserId = newWxUser.id;
+                    this.db.users.Add(newUser);
+
+                    return Redirect(returnUrl + "?userId=" + newUser.id);
+                    // return userInfo;
+                    // return this.Redirect(returnUrl);
+                }
+                else
+                {
+                    var user = (from u in this.db.users
+                                where
+    u.id == wxUser.id
+                                select u).FirstOrDefault();
+                    return Redirect(returnUrl + "?userId=" + user.id);
+                }
+
             }
             else
             {
-                var user = (from u in this.db.users
-                            where
-u.id == wxUser.id
-                            select u).FirstOrDefault();
-                return Redirect(returnUrl + "?userId=" + user.id);
+                return null;
             }
-
         }
 
 
