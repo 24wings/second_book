@@ -168,6 +168,7 @@ namespace Wings.Projects.Wechat
 
             var url = "http://" + HttpContext.Request.Host + HttpContext.Request.Path;
             Console.WriteLine("url:" + url);
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             var jssdkUiPackage = JSSDKHelper.GetJsSdkUiPackage(WechatConfig.AppId, WechatConfig.secret, url);
             //ViewData["JsSdkUiPackage"] = jssdkUiPackage;
             //ViewData["AppId"] = appId;
