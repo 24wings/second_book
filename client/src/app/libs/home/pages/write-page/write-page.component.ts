@@ -3,6 +3,7 @@ import { MyHttpService } from 'src/app/shared/services/my-http.service';
 import notify from "devextreme/ui/notify";
 import { AuthService } from 'src/app/shared/services';
 import { FileService } from 'src/app/shared/services/file.service';
+import { EditorComponent } from '@tinymce/tinymce-angular';
 let data = `
 # 标题
 
@@ -69,7 +70,7 @@ export class WritePageComponent {
         audioUrl: "",
         audioName: ""
     }
-
+    @ViewChild(EditorComponent) editor: EditorComponent
     state: View = View.Write;
 
     View = View;
@@ -144,6 +145,7 @@ export class WritePageComponent {
 
     }
     preview() {
+
         this.refershEditor();
         this.state = View.Preview;
         setTimeout(() => {
@@ -217,6 +219,49 @@ export class WritePageComponent {
     log(e) {
         console.log(e)
     }
+
+    file_picker_callback = async (callback, value, meta) => {
+        /* Provide file and text for the link dialog */
+        if (meta.filetype === 'file') {
+            var file = await this.fileService.selectFile();
+            var formData = new FormData();
+            // callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            formData.set("file", file.file);
+            formData.append("filename", file.filename);
+
+            var rtn = await this.myHttp.Post("/api/Video/video/uploadVideo", formData);
+            if (rtn) {
+                this.uploadModalVisible = true;
+                this.uploadUrl = rtn.url;
+                callback(rtn.url, { text: '新图片' });
+
+            }
+        }
+
+        /* Provide image and alt text for the image dialog */
+        if (meta.filetype === 'image') {
+            // callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+            var file = await this.fileService.selectFile();
+            var formData = new FormData();
+            // callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+            formData.set("file", file.file);
+            formData.append("filename", file.filename);
+
+            var rtn = await this.myHttp.Post("/api/Video/video/uploadVideo", formData);
+            if (rtn) {
+                this.uploadModalVisible = true;
+                this.uploadUrl = rtn.url;
+                callback(rtn.url, { text: '新图片' });
+
+            }
+        }
+
+        /* Provide alternative source and posted for the media dialog */
+        if (meta.filetype === 'media') {
+            callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+        }
+    }
+
 }
 
 //http://tpjs.95t92.cn/upload/24许嵩 _ 黄龄 - 惊鸿一面.mp3

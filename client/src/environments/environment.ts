@@ -6,12 +6,13 @@ export enum DataMode {
   LocalStorage
 }
 export const environment = {
-  ip: "http://115.29.64.6",
+  ip: "http://localhost",
   production: false,
   get dvoUrl() {
     return this.ip + "/api/RBAC/Demo/";
   },
-  dataMode: DataMode.LocalStorage
+  dataMode: DataMode.LocalStorage,
+  tinyMice: "lt1oon0d4f934srgjyhw7s2rvno2sd8wucve63df62188344"
 };
 
 /*

@@ -10,6 +10,7 @@ import { DxValidatorModule } from "devextreme-angular/ui/validator";
 import { DxValidationGroupModule } from "devextreme-angular/ui/validation-group";
 import { SharedModule } from "../../shared.module";
 import { RcxhApiService } from '../../services/rcxh-api.service';
+import notify from "devextreme/ui/notify";
 @Component({
     selector: "app-register",
     templateUrl: "./register.component.html",
@@ -34,9 +35,11 @@ export class RegisterComponent {
             //   this.router.navigateByUrl("/rcxh/admin/page/Wings.Projects.Rcxh.DVO.Rbac.OrgManage");
             //   this.authService.logIn(this.login, this.password);
             if (rtn.user.id) {
+                notify("恭喜加入我们", 'success');
                 sessionStorage.setItem("userId", rtn.user.id);
+
                 this.authService.logIn(this.username, this.password);
-                this.router.navigateByUrl("/shop");
+                this.router.navigateByUrl("/home/write");
 
             }
 

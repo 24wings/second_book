@@ -12,7 +12,6 @@
         <dx-button text="编辑" style="margin-right: 40px;" type="default" (onClick)="edit()"></dx-button>
         <dx-button text="预览" style="    margin: 20px;" type="default" (onClick)="preview()"></dx-button>
 
-
     </div>
     <dx-form id="form" [(formData)]="articleMeta">
         <dxi-item itemType="group" caption="封面" cssClass="first-group" [colCount]="4">
@@ -76,7 +75,20 @@
             <!-- <dx-button text="保存" style="    margin: 20px;" type="success" (onClick)="save()"></dx-button> -->
 
         </div>
-        <textarea name="editor" [value]="markdown" id="editor" style="width:100%"></textarea>
+        <editor #editor (onChange)="log($event)" [(ngModel)]="html"
+            apiKey="lt1oon0d4f934srgjyhw7s2rvno2sd8wucve63df62188344" cloudChannel="stable" [init]="{
+            plugins: 'link image media ', 
+             language_url:'/assets/tinymce/langs/zh_CN.js',
+             language:'zh_CN',
+             image_advtab: true,
+             file_picker_callback:file_picker_callback,
+             height: 400,
+             content_css : '/assets/css/custom_tinymce.css',
+             body_class:'markdown-body typo'
+            
+            }" [initialValue]="{language_url:'/assets/tinymce/langs/zh_CN.js'}">
+        </editor>
+        <!-- <textarea name="editor" [value]="markdown" id="editor" style="width:100%"></textarea> -->
     </div>
 </ng-container>
 

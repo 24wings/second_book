@@ -1,4 +1,6 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 import {
   DxDataGridModule,
   DxTreeListModule,
@@ -83,6 +85,7 @@ let cellComponents = [
     DxValidatorModule,
     DxFileUploaderModule,
     DxLookupModule,
+    EditorModule
 
   ],
   exports: [
@@ -121,7 +124,8 @@ let cellComponents = [
     DxValidationGroupModule,
     DxValidatorModule,
     DxFileUploaderModule,
-    DxLookupModule
+    DxLookupModule,
+    EditorModule
   ],
   declarations: [
     WsViewComponent,
@@ -133,6 +137,7 @@ let cellComponents = [
     DynamicCellDirective,
     ...cellComponents,
     WsSearchBarComponent,
+
   ],
   providers: [SqlMapService, DxTemplateHost, RcxhApiService],
   entryComponents: []

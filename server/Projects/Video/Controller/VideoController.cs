@@ -85,7 +85,7 @@ namespace Wings.Projects.Video.Controllers
             var res = OSSService.uploadFile(fromFile, filename);
             return Rtn<UploadOutput>.Success(new UploadOutput
             {
-                url = "http://tpjs.95t92.cn/" + filename,
+                url = "http://secondbook.airuanjian.vip/" + filename,
                 filename = filename,
                 res = res
             });

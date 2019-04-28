@@ -14,10 +14,10 @@ namespace Wings.Base.Common.Services
     /// </summary>
     public class OSSService
     {
-        static string url { get; } = @"oss-cn-qingdao.aliyuncs.com";
-        static string accessKeyId = "LTAIPPQYaQu61toC";
-        static string accessKeySecret = "doj0AmwkabbwAPtK8oOKLdzhNscFfg ";
-        static string endpoint = "oss-cn-qingdao.aliyuncs.com";
+        static string url { get; } = @"http://secondbook.oss-cn-beijing.aliyuncs.com";
+        static string accessKeyId = "LTAIcMnaxxUG7dbk";
+        static string accessKeySecret = "VhNgQZrGYz7dXpiCUS8r36mbLgy6db";
+        static string endpoint = "oss-cn-beijing.aliyuncs.com";
         static OssClient client = new OssClient(endpoint, accessKeyId, accessKeySecret);
 
         static string fileToUpload = @"E:\workspace\wings\worker\worker.csproj";
@@ -28,7 +28,7 @@ namespace Wings.Base.Common.Services
         /// 默认存储
         /// </summary>
         /// <value></value>
-        static string bucketName { get; set; } = "gamewinner2019";
+        static string bucketName { get; set; } = "miaobook";
         /// <summary>
         /// 上传文件
         /// </summary>
@@ -36,7 +36,7 @@ namespace Wings.Base.Common.Services
         /// <param name="key"></param>
         /// <param name="stream"></param>
         /// <returns></returns>
-        public static PutObjectResult uploadFile(Stream stream, string key, string bucketName = "gamewinner2019")
+        public static PutObjectResult uploadFile(Stream stream, string key, string bucketName = "miaobook")
         {
             try
             {
