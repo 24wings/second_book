@@ -51,6 +51,16 @@ namespace Wings
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(4 * 60);
+                options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
             // Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             // Encoding encoding = Encoding.GetEncoding("GB2312");
             services.AddCors(options =>
@@ -149,6 +159,7 @@ namespace Wings
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseStaticFiles();
+            app.UseSession();
             // app.UseSpaStaticFiles();
             app.UseCors("AllowAllOrigin");
 
