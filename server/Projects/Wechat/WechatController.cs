@@ -177,4 +177,3 @@ namespace Wings.Projects.Wechat
         }
     }
 }
-}
