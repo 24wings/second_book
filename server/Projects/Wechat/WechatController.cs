@@ -173,7 +173,7 @@ namespace Wings.Projects.Wechat
             //ViewData["Timestamp"] = jssdkUiPackage.Timestamp;
             //ViewData["NonceStr"] = jssdkUiPackage.NonceStr;
             //ViewData["Signature"] = jssdkUiPackage.Signature;
-
+            Console.WriteLine("生成测试参数", jssdkUiPackage.Signature);
             return Rtn<object>.Success(jssdkUiPackage);
         }
     }
