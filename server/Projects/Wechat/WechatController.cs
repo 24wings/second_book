@@ -43,7 +43,7 @@ namespace Wings.Projects.Wechat
             var state = "JeffreySu-" + DateTime.Now.Subtract(new DateTime(1970, 1, 1, 1, 0, 0, 0)).TotalMilliseconds;//随机数，用于识别请求可靠性
                                                                                                                      // Session["State"] = state;//储存随机数到Session
                                                                                                                      // var url = "http://115.29.64.6/api/wechat/oauth2/UserInfoCallback?returnUrl=" + returnUrl.UrlEncode();
-            var url = "http://localhost/api/wechat/oauth2/UserInfoCallback?returnUrl=" + returnUrl.UrlEncode();
+            var url = "http://second.airuanjian.vip/api/wechat/oauth2/UserInfoCallback?returnUrl=" + returnUrl.UrlEncode();
             //此页面引导用户点击授权
             var UrlUserInfo =
                 OAuthApi
