@@ -149,7 +149,7 @@ namespace Wings.Projects.Wechat
         }
 
         [HttpGet("[action]")]
-        public Rtn<object> jssdk()
+        public Rtn<object> jssdk(string origin)
         {
             #region v13.6.4之前的写法
             ////获取时间戳
@@ -166,10 +166,10 @@ namespace Wings.Projects.Wechat
             //ViewData["Signature"] = signature;
             #endregion
 
-            var url = "http://" + HttpContext.Request.Host + HttpContext.Request.Path + HttpContext.Request.QueryString;
-            Console.WriteLine("url:" + url);
+            // var url = "http://" + HttpContext.Request.Host + HttpContext.Request.Path + HttpContext.Request.QueryString;
+            Console.WriteLine("url:" + origin);
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            var jssdkUiPackage = JSSDKHelper.GetJsSdkUiPackage(WechatConfig.AppId, WechatConfig.secret, url);
+            var jssdkUiPackage = JSSDKHelper.GetJsSdkUiPackage(WechatConfig.AppId, WechatConfig.secret, origin);
             //ViewData["JsSdkUiPackage"] = jssdkUiPackage;
             //ViewData["AppId"] = appId;
             //ViewData["Timestamp"] = jssdkUiPackage.Timestamp;
