@@ -12,9 +12,18 @@ using Wings.Projects.Web;
 using Cucr.CucrSaas.App.Service;
 using Wings.Projects.Web.Entity.Rbac;
 using System.Linq;
+using Senparc.Weixin.MP.Helpers;
 
 namespace Wings.Projects.Wechat
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    public class TokenUser
+    {
+        public string token { get; set; }
+        public int userId { get; set; }
+    }
     /// <summary>
     /// 组织管理
     /// </summary>
@@ -73,6 +82,7 @@ namespace Wings.Projects.Wechat
                 state, OAuthScope.snsapi_userinfo);
             Console.WriteLine(url);
             Console.WriteLine(UrlUserInfo);
+
             // this.HttpContext.Session.Set("State",state.ge);
             // Cook
             // var UrlBase =
@@ -101,6 +111,7 @@ namespace Wings.Projects.Wechat
                 result = OAuthApi.GetAccessToken(WechatConfig.AppId, WechatConfig.secret, code);
 
                 OAuthUserInfo userInfo = OAuthApi.GetUserInfo(result.access_token, result.openid);
+
                 var wxUser = (from u in this.db.wxUsers where u.openid == userInfo.openid select u).FirstOrDefault();
                 if (wxUser == null)
                 {
@@ -136,6 +147,34 @@ namespace Wings.Projects.Wechat
             }
         }
 
+        [HttpGet("[action]")]
+        public object jssdk()
+        {
+            #region v13.6.4之前的写法
+            ////获取时间戳
+            //var timestamp = JSSDKHelper.GetTimestamp();
+            ////获取随机码
+            //var nonceStr = JSSDKHelper.GetNoncestr();
+            //string ticket = JsApiTicketContainer.TryGetJsApiTicket(appId, secret);
+            ////获取签名
+            //var signature = JSSDKHelper.GetSignature(ticket, nonceStr, timestamp, Request.Url.AbsoluteUri);
 
+            //ViewData["AppId"] = appId;
+            //ViewData["Timestamp"] = timestamp;
+            //ViewData["NonceStr"] = nonceStr;
+            //ViewData["Signature"] = signature;
+            #endregion
+
+            var url = HttpContext.Request.Protocol + HttpContext.Request.Host + HttpContext.Request.Query;
+            var jssdkUiPackage = JSSDKHelper.GetJsSdkUiPackage(WechatConfig.AppId, WechatConfig.secret, url);
+            //ViewData["JsSdkUiPackage"] = jssdkUiPackage;
+            //ViewData["AppId"] = appId;
+            //ViewData["Timestamp"] = jssdkUiPackage.Timestamp;
+            //ViewData["NonceStr"] = jssdkUiPackage.NonceStr;
+            //ViewData["Signature"] = jssdkUiPackage.Signature;
+
+            return jssdkUiPackage;
+        }
     }
+}
 }

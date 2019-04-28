@@ -12,11 +12,14 @@ using Wings.Base.Common.DTO;
 
 namespace Wings.Projects.Web.Controllers
 {
+
+
     /// <summary>
     /// 自动化CRUD
     /// </summary>
     public abstract class CurdController<T> where T : class
     {
+
         /// <summary>
         /// 
         /// </summary>
