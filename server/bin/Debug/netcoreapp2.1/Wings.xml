@@ -2262,6 +2262,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Wings.Projects.Web.RcxhContext.wxUsers">
+            <summary>
+            微信用户
+            </summary>
+            <value></value>
+        </member>
         <member name="M:Wings.Projects.Web.RcxhContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <summary>
             
@@ -2279,6 +2285,20 @@
             <summary>
             组织管理
             </summary>
+        </member>
+        <member name="P:Wings.Projects.Wechat.WechatController.db">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Wings.Projects.Wechat.WechatController.#ctor(Wings.Projects.Web.RcxhContext,Cucr.CucrSaas.App.Service.IUserService)">
+            <summary>
+            微信
+            </summary>
+            <param name="_db"></param>
+            <param name="_userService"></param>
+            <returns></returns>
         </member>
         <member name="M:Wings.Projects.Wechat.WechatController.auth(System.String,System.Int32,System.String,System.String)">
             <summary>

@@ -58,6 +58,11 @@ namespace Wings.Projects.Web
         /// </summary>
         /// <value></value>
         public DbSet<Comment> comments { get; set; }
+        /// <summary>
+        /// 微信用户
+        /// </summary>
+        /// <value></value>
+        public DbSet<WxUser> wxUsers { get; set; }
 
 
 

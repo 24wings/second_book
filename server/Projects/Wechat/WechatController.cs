@@ -8,6 +8,10 @@ using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
 using Senparc.Weixin.MP.CommonAPIs;
 using Senparc.Weixin.MP;
+using Wings.Projects.Web;
+using Cucr.CucrSaas.App.Service;
+using Wings.Projects.Web.Entity.Rbac;
+using System.Linq;
 
 namespace Wings.Projects.Wechat
 {
@@ -17,6 +21,24 @@ namespace Wings.Projects.Wechat
     [Route("/api/wechat")]
     public class WechatController : Controller
     {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        private RcxhContext db { get; set; }
+        private IUserService userService { get; set; }
+        /// <summary>
+        /// 微信
+        /// </summary>
+        /// <param name="_db"></param>
+        /// <param name="_userService"></param>
+        /// <returns></returns>
+        public WechatController(RcxhContext _db, IUserService _userService)
+        {
+            this.userService = _userService;
+            db = _db;
+        }
 
         /// <summary>
         /// 微信接入
@@ -76,9 +98,33 @@ namespace Wings.Projects.Wechat
             result = OAuthApi.GetAccessToken(WechatConfig.AppId, WechatConfig.secret, code);
 
             OAuthUserInfo userInfo = OAuthApi.GetUserInfo(result.access_token, result.openid);
-            return userInfo;
-            // return this.Redirect(returnUrl);
+            var wxUser = (from u in this.db.wxUsers where u.openid == userInfo.openid select u).FirstOrDefault();
+            if (wxUser == null)
+            {
+                var newUser = new User { nickname = userInfo.nickname, headimg = userInfo.headimgurl };
+                // 新用户注册
+                var newWxUser = new WxUser
+                {
+                    openid = userInfo.openid,
+                    nickname = userInfo.nickname,
+                    headimg = userInfo.headimgurl
+                };
+                this.db.wxUsers.Add(newWxUser);
+                newUser.wxUserId = newWxUser.id;
+                this.db.users.Add(newUser);
 
+                return Redirect(returnUrl + "?userId=" + newUser.id);
+                // return userInfo;
+                // return this.Redirect(returnUrl);
+            }
+            else
+            {
+                var user = (from u in this.db.users
+                            where
+u.id == wxUser.id
+                            select u).FirstOrDefault();
+                return Redirect(returnUrl + "?userId=" + user.id);
+            }
 
         }
 
